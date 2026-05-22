@@ -1,49 +1,47 @@
-# BellPro
+# BellPro: School Bell Automation System
 
-BellPro is a software solution for automating school bells. The project enables precise control of ringing schedules via computer, integrating seamlessly with existing school PA systems and other organizational facilities.
+BellPro is a robust, open-source software solution designed to automate school bell ringing. By interfacing a PC with existing school PA systems via a custom RS232 hardware interface, BellPro eliminates manual operation and ensures high-precision timing for classes, breaks, and extracurricular activities.
 
-## About the Project
-
-This project was created to replace outdated, manual bell systems with a modern, automated solution. Developed since 2007, BellPro has proven to be a reliable system, currently active in over 10 schools across Serbia.
-
-This repository contains the full source code (VB6), documentation, PCB interface schematics, as well as the tools required for installation and maintenance.
+## Overview
+Originally conceptualized in 2007 and refined over nearly two decades, BellPro has been a staple in numerous schools across Serbia. This repository provides the complete ecosystem needed to deploy the system, including the VB6 source code, PCB designs for the relay interface, and installation scripts.
 
 ## Key Features
+* **Unlimited Scheduling:** Create and manage an infinite number of bell schedules.
+* **Smart Calendar Logic:** Automated handling of weekends, public holidays, and seasonal school breaks.
+* **Extracurricular Support:** Easily switch between different schedules for sports events or evening activities.
+* **System Resilience:** Built-in auto-start and ability to recover operations after power outages or reboots.
+* **Password Protection:** Secure the configuration to prevent unauthorized modifications.
+* **Data Portability:** Full support for importing and exporting schedules.
 
-* **Flexible Scheduling:** Unlimited number of schedules with custom time entries.
-* **Extracurricular Support:** Dedicated schedules for sports halls and other non-academic activities.
-* **Smart Planning:** Automatic disabling of bells during weekends, holidays, and school breaks.
-* **Reliability:** Auto-start with the system, resilient to power outages and computer reboots.
-* **Security:** Password protection to prevent unauthorized changes.
-* **Compatibility:** Import/Export functionality for schedules.
+## Technical Architecture
+* **Core:** Developed in Visual Basic 6 (VB6).
+* **Database:** SQLite (using ODBC connector for integration).
+* **Communication:** RS232 serial interface.
+    * **Triggering:** Pin 7 (RTS) controls the relay.
+    * **Detection:** Pin 4 (DTR) monitors the interface status.
 
-## Technical Specifications
+## Hardware Setup
+The system relies on a physical relay interface connected to the school's sound system.
+* **Serial Port:** Native serial ports (COM ports) on motherboards are highly recommended for stability.
+* **USB-to-Serial:** If using a USB adapter, performance depends heavily on the chipset. We recommend high-quality adapters based on the **FTDI FT232RNL** chip (e.g., Digitus).
+* **Caution:** Note that some motherboards may toggle RS232 signals during BIOS post/restart, which could cause a brief relay click.
 
-* **Programming Language:** Visual Basic 6 (VB6).
-* **Database:** SQLite.
-* **Interface:** RS232 with relay (triggering via RTS - pin 7, interface detection via DTR - pin 4).
+## Installation Guide
+1. **Prerequisites:** Install the SQLite ODBC driver (`sqliteodbc.exe`) provided in the `Tools` folder.
+2. **Library Registration:** If you encounter "Component not found" errors, manually register the required OCX files. Specifically, for the DataGrid, navigate to `InstallScript -> dll` and register `msdatgrd.ocx`.
+3. **Configuration:** Use the included KeyGenerator to authorize your specific hardware build.
 
-## Installation & Development
+## Roadmap & Future Development
+While the system remains stable, we encourage the community to help modernize the codebase. Potential areas for contribution include:
+* **Microcontroller Integration:** Replacing the RS232/PC-dependent design with a modern Atmel or PIC microcontroller.
+* **Standalone Operation:** Developing an offline mode with an integrated RTC (Real Time Clock) and EEPROM to store schedules locally, removing the need for a PC.
+* **UI Modernization:** Porting the logic to a modern programming language or a web-based dashboard.
 
-To compile and run the program in the VB6 environment, you must:
-
-1.  **SQLite Connector:** Install `sqliteodbc.exe` (located in the `Tools` folder).
-2.  **Dependencies:** If you encounter issues loading the `MSDataGridLib.DataGrid` DLL, manually import it from `InstallScript -> dll -> msdatgrd.ocx`.
-3.  **Hardware:** The system performs best with native serial ports on the motherboard. If using USB-to-Serial converters, we highly recommend using those based on the **FTDI (e.g., FT232RNL)** chip (e.g., Digitus).
-
-> **Note:** During a computer restart, a brief signal may be sent to the RS232 port, which might cause a momentary ring.
-
-## Future Development
-
-This is an open-source project, and we welcome community contributions. Ideas for future improvements include:
-
-* Migrating the interface to modern microcontrollers (Atmel/PIC).
-* Developing an "offline" version using an RTC (Real Time Clock) module and EEPROM.
-* Code modernization and migration to newer frameworks.
+## Contributing
+We want to keep this project alive! If you decide to install BellPro in a school or organization, please let us know or open an issue to document the installation. Contributions in the form of code improvements, documentation, or hardware design forks are highly encouraged.
 
 ## License
-
-This software is completely free to use. Please feel free to install, use, and modify it. If you install it in an institution, feel free to let us know so we can track active installations.
+BellPro is free and open-source. Use it, share it, and adapt it for your local community.
 
 ---
-*Project developed with dedication and a passion for open-source software. Original inspiration drawn from the work of Voja Milanović.*
+*Inspired by the legendary school bell projects of the past, specifically the work of Voja Milanović.*
