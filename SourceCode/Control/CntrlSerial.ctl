@@ -79,13 +79,18 @@ Else
     status = True
 End If
 
-    If GetProfile("config", "024", "", getConfigPath) = "Bell USB" Then Trm.Enabled = status
+    If GetProfile("config", "024", "", getConfigPath) = "Bell USB" Then
+		Trm.Enabled = status
+	End If
+	
     If GetProfile("config", "024", "", getConfigPath) = "Bell Ethernet" Then
         'ethernet interfejs
     End If
+	
     If GetProfile("config", "024", "", getConfigPath) = "Bell Comm" Then
         If COM.PortOpen = True Then COM.RTSEnable = status
     End If
+	
     If GetProfile("config", "024", "", getConfigPath) = "Bez interfejsa" Then
         Exit Sub
     End If
