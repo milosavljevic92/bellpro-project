@@ -19,6 +19,7 @@ Originally conceptualized in 2007 and refined over nearly two decades, BellPro h
 The system relies on a physical relay interface connected to the school's sound system.
 * **Serial Port:** Native serial ports (COM ports) on motherboards are highly recommended for stability.
 * **USB-to-Serial:** If using a USB adapter, performance depends heavily on the chipset. We recommend high-quality adapters based on the **FTDI FT232RNL** chip (e.g., Digitus).
+https://de.assmann.shop/en/Cables-and-Peripherals/Computer-Accessories/IO-Cards/USB-2-0-serial-adapter.html
 * **Caution:** Note that some motherboards may toggle RS232 signals during BIOS post/restart, which could cause a brief relay click.
 ## Installation Guide
 1. **Prerequisites:** Install the SQLite ODBC driver (`sqliteodbc.exe`) provided in the `Tools` folder.
@@ -27,11 +28,12 @@ The system relies on a physical relay interface connected to the school's sound 
 ## Roadmap & Future Development
 While the system remains stable, we encourage the community to help modernize the codebase. Potential areas for contribution include:
 * **Microcontroller Integration:** Replacing the RS232/PC-dependent design with a modern Atmel or PIC microcontroller.
-* **Standalone Operation:** Developing an offline mode with an integrated RTC (Real Time Clock) and EEPROM to store schedules locally, removing the need for a PC.
-* **UI Modernization:** Porting the logic to a modern programming language or a web-based dashboard.
 ## Contributing
 We want to keep this project alive! If you decide to install BellPro in a school or organization, please let us know or open an issue to document the installation. Contributions in the form of code improvements, documentation, or hardware design forks are highly encouraged.
 ## License
-BellPro is free and open-source. Use it, share it, and adapt it for your local community.
+BellPro is released under the [MIT License](LICENSE).
+You are free to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the software, provided the original copyright notice and this permission notice
+are included in all copies or substantial portions of the software.
 ---
-*Inspired by the legendary school bell projects of the past, specifically the work of Voja Milanović.*
+*Inspired by the legendary school bell projects of the past, specifically the work of Voja Milanović. http://vojo.milanovic.org/zvono.htm*
