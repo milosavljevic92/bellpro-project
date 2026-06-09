@@ -3,7 +3,7 @@ Begin VB.Form FrmRucnoZ
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Rucno upravljanje zvonom:"
-   ClientHeight    =   1905
+   ClientHeight    =   2280
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   2910
@@ -11,7 +11,7 @@ Begin VB.Form FrmRucnoZ
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   1905
+   ScaleHeight     =   2280
    ScaleWidth      =   2910
    StartUpPosition =   2  'CenterScreen
    Begin BellPro.XPButton cmdRucnoZvoni 
@@ -20,12 +20,20 @@ Begin VB.Form FrmRucnoZ
       TabIndex        =   1
       Top             =   960
       Width           =   2655
-      _extentx        =   4683
-      _extenty        =   1508
-      font            =   "FrmRucnoZ.frx":802D
-      caption         =   "Upali Zvono"
-      forecolor       =   -2147483642
-      forehover       =   0
+      _ExtentX        =   4683
+      _ExtentY        =   1508
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Segoe UI"
+         Size            =   15.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Caption         =   "Upali Zvono"
+      ForeColor       =   -2147483642
+      ForeHover       =   0
    End
    Begin VB.ComboBox CmbNacinZvona 
       Appearance      =   0  'Flat

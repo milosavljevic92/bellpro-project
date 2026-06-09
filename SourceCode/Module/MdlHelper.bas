@@ -102,7 +102,7 @@ Public Sub GenerateIniFileIfNotExist()
         "022=" & vbCrLf
         fs.Write _
         "023=" & "COM1" & vbCrLf & _
-        "024=" & "Bell USB" & vbCrLf & _
+        "024=" & "Bell Comm" & vbCrLf & _
         "025=" & "12" & vbCrLf & _
         "026=" & "1" & vbCrLf & _
         "027=" & "1" & vbCrLf & _
@@ -115,7 +115,9 @@ Public Sub GenerateIniFileIfNotExist()
         "034=" & "0" & vbCrLf & _
         "035=" & "0" & vbCrLf & _
         "036=" & "0" & vbCrLf & _
-        "037=" & "0" & vbCrLf
+        "040=" & "1" & vbCrLf & _
+        "041=" & "0" & vbCrLf & _
+        "037=" & "1" & vbCrLf
         fs.Close
     End If
 End Sub

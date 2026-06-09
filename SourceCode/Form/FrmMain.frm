@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
 Begin VB.Form FrmMain 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   1  'Fixed Single
@@ -26,14 +26,78 @@ Begin VB.Form FrmMain
    ScaleMode       =   3  'Pixel
    ScaleWidth      =   366
    StartUpPosition =   2  'CenterScreen
+   Begin MSDataGridLib.DataGrid Grid 
+      Height          =   4815
+      Left            =   120
+      TabIndex        =   5
+      Top             =   600
+      Width           =   5295
+      _ExtentX        =   9340
+      _ExtentY        =   8493
+      _Version        =   393216
+      HeadLines       =   1
+      RowHeight       =   15
+      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Segoe UI"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Segoe UI"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      ColumnCount     =   2
+      BeginProperty Column00 
+         DataField       =   ""
+         Caption         =   ""
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1033
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      BeginProperty Column01 
+         DataField       =   ""
+         Caption         =   ""
+         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
+            Type            =   0
+            Format          =   ""
+            HaveTrueFalseNull=   0
+            FirstDayOfWeek  =   0
+            FirstWeekOfYear =   0
+            LCID            =   1033
+            SubFormatType   =   0
+         EndProperty
+      EndProperty
+      SplitCount      =   1
+      BeginProperty Split0 
+         BeginProperty Column00 
+         EndProperty
+         BeginProperty Column01 
+         EndProperty
+      EndProperty
+   End
    Begin BellPro.CntrlSerial CntrlSerial 
       Height          =   615
       Left            =   5880
-      TabIndex        =   5
+      TabIndex        =   4
       Top             =   240
       Width           =   615
-      _ExtentX        =   1085
-      _ExtentY        =   1085
+      _extentx        =   1085
+      _extenty        =   1085
    End
    Begin VB.Timer trmTime 
       Interval        =   10
@@ -59,7 +123,7 @@ Begin VB.Form FrmMain
       Height          =   405
       Left            =   120
       Style           =   2  'Dropdown List
-      TabIndex        =   2
+      TabIndex        =   1
       TabStop         =   0   'False
       ToolTipText     =   "Rasporedi definisani u bazi podataka"
       Top             =   120
@@ -96,97 +160,18 @@ Begin VB.Form FrmMain
       Top             =   5655
       Width           =   5490
    End
-   Begin MSDataGridLib.DataGrid Grid 
-      Height          =   4695
-      Left            =   120
-      TabIndex        =   1
-      TabStop         =   0   'False
-      Top             =   600
-      Width           =   5295
-      _ExtentX        =   9340
-      _ExtentY        =   8281
-      _Version        =   393216
-      AllowUpdate     =   0   'False
-      AllowArrows     =   0   'False
-      Appearance      =   0
-      BackColor       =   14737632
-      Enabled         =   -1  'True
-      HeadLines       =   1
-      RowHeight       =   19
-      BeginProperty HeadFont {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Arial"
-         Size            =   8.25
-         Charset         =   238
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Arial"
-         Size            =   9.75
-         Charset         =   238
-         Weight          =   400
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      ColumnCount     =   2
-      BeginProperty Column00 
-         DataField       =   ""
-         Caption         =   ""
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   2074
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      BeginProperty Column01 
-         DataField       =   ""
-         Caption         =   ""
-         BeginProperty DataFormat {6D835690-900B-11D0-9484-00A0C91110ED} 
-            Type            =   0
-            Format          =   ""
-            HaveTrueFalseNull=   0
-            FirstDayOfWeek  =   0
-            FirstWeekOfYear =   0
-            LCID            =   2074
-            SubFormatType   =   0
-         EndProperty
-      EndProperty
-      SplitCount      =   1
-      BeginProperty Split0 
-         Locked          =   -1  'True
-         BeginProperty Column00 
-         EndProperty
-         BeginProperty Column01 
-         EndProperty
-      EndProperty
-   End
    Begin BellPro.XPButton cmdPrimeni 
       Height          =   375
       Left            =   2520
-      TabIndex        =   4
+      TabIndex        =   3
       Top             =   120
       Width           =   1695
-      _ExtentX        =   2990
-      _ExtentY        =   661
-      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Segoe UI"
-         Size            =   9.75
-         Charset         =   0
-         Weight          =   700
-         Underline       =   0   'False
-         Italic          =   0   'False
-         Strikethrough   =   0   'False
-      EndProperty
-      Caption         =   "Primeni"
-      ForeColor       =   -2147483642
-      ForeHover       =   0
+      _extentx        =   2990
+      _extenty        =   661
+      font            =   "FrmMain.frx":802D
+      caption         =   "Primeni"
+      forecolor       =   -2147483642
+      forehover       =   0
    End
    Begin VB.Label lblStatus 
       Alignment       =   2  'Center
@@ -203,14 +188,14 @@ Begin VB.Form FrmMain
       EndProperty
       Height          =   375
       Left            =   0
-      TabIndex        =   3
+      TabIndex        =   2
       Top             =   5400
       Width           =   5535
    End
    Begin VB.Image ImgDissconn 
       Height          =   375
       Left            =   4320
-      Picture         =   "FrmMain.frx":802D
+      Picture         =   "FrmMain.frx":8055
       Stretch         =   -1  'True
       ToolTipText     =   "Port je otvoren, ali interfejs nije pronadjen"
       Top             =   120
@@ -220,7 +205,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgConnected 
       Height          =   375
       Left            =   4320
-      Picture         =   "FrmMain.frx":B04B
+      Picture         =   "FrmMain.frx":B073
       Stretch         =   -1  'True
       ToolTipText     =   "Interfejs BellFace je konektovan"
       Top             =   120
@@ -230,7 +215,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgZelena 
       Height          =   375
       Left            =   4920
-      Picture         =   "FrmMain.frx":EAF9
+      Picture         =   "FrmMain.frx":EB21
       Stretch         =   -1  'True
       ToolTipText     =   "Danas zvoni "
       Top             =   120
@@ -240,7 +225,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgCrvena 
       Height          =   375
       Left            =   4920
-      Picture         =   "FrmMain.frx":F353
+      Picture         =   "FrmMain.frx":F37B
       Stretch         =   -1  'True
       ToolTipText     =   "Danas ne zvoni"
       Top             =   120
@@ -427,7 +412,7 @@ If Not DebugMode = True Then On Error Resume Next
 End Sub
 Private Sub mnuInterfejs_Click()
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
-    ClosePort
+    'ClosePort
     FrmInterfejs.Show
     FrmMain.Hide
 End Sub

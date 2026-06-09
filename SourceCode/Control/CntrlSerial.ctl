@@ -1,21 +1,15 @@
 VERSION 5.00
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "mscomm32.ocx"
 Begin VB.UserControl CntrlSerial 
-   ClientHeight    =   2385
+   ClientHeight    =   1605
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   4125
-   ScaleHeight     =   2385
-   ScaleWidth      =   4125
-   Begin VB.Timer trm 
-      Enabled         =   0   'False
-      Interval        =   5
-      Left            =   2520
-      Top             =   480
-   End
+   ClientWidth     =   780
+   ScaleHeight     =   1605
+   ScaleWidth      =   780
    Begin MSCommLib.MSComm COM 
-      Left            =   2040
-      Top             =   240
+      Left            =   0
+      Top             =   720
       _ExtentX        =   1005
       _ExtentY        =   1005
       _Version        =   393216
@@ -49,8 +43,21 @@ If Not DebugMode = True Then On Error Resume Next
                 .CommPort = Mid(portNumber, 4, 2)
                 .Settings = "2400,n,8,1"
                 .PortOpen = True
-                .DTREnable = False
+            
             End With
+            
+            If GetProfile("config", "040", "", getConfigPath) = "1" Then
+                COM.DTREnable = True
+            Else
+                COM.DTREnable = False
+            End If
+            
+            If GetProfile("config", "041", "", getConfigPath) = "1" Then
+                COM.RTSEnable = True
+            Else
+                COM.RTSEnable = False
+            End If
+            
             If COM.PortOpen = True Then
                 PrikaziPoruku "Port: " & portNumber & " je otvoren!", "5"
                 OpenPort = True
@@ -60,12 +67,30 @@ If Not DebugMode = True Then On Error Resume Next
 End Function
 Public Function ClosePort() As Boolean
 If Not DebugMode = True Then On Error Resume Next
+    If GetProfile("config", "041", "", getConfigPath) = "1" Then
+        COM.RTSEnable = True
+    Else
+        COM.RTSEnable = False
+    End If
     If COM.PortOpen = True Then COM.PortOpen = False
     PrikaziPoruku "Port zatvoren! " & PortBroj, "5"
 End Function
 Public Function CheckInterface() As Boolean
 If Not DebugMode = True Then On Error Resume Next
-    If COM.PortOpen = True Then CheckInterface = True
+    If GetProfile("config", "040", "", getConfigPath) = "1" Then
+        If COM.PortOpen = True Then
+            COM.DTREnable = True
+            If COM.CTSHolding = True Then
+                CheckInterface = True
+            Else
+                CheckInterface = False
+            End If
+        Else
+            CheckInterface = False
+        End If
+    Else
+        If COM.PortOpen = True Then CheckInterface = True
+    End If
 End Function
 Public Function PortState() As Boolean
 If Not DebugMode = True Then On Error Resume Next
@@ -73,37 +98,21 @@ If Not DebugMode = True Then On Error Resume Next
 End Function
 Public Sub HitTheRelay(status As Boolean)
 If Not DebugMode = True Then On Error Resume Next
-If status = True Then
-    status = False
-Else
-    status = True
-End If
-
-    If GetProfile("config", "024", "", getConfigPath) = "Bell USB" Then
-		Trm.Enabled = status
-	End If
-	
-    If GetProfile("config", "024", "", getConfigPath) = "Bell Ethernet" Then
-        'ethernet interfejs
-    End If
-	
     If GetProfile("config", "024", "", getConfigPath) = "Bell Comm" Then
-        If COM.PortOpen = True Then COM.RTSEnable = status
+        If CheckInterface() = True Then
+            If GetProfile("config", "041", "", getConfigPath) = "1" Then
+                COM.RTSEnable = Not status
+            Else
+                COM.RTSEnable = status
+            End If
+        End If
     End If
-	
+            
     If GetProfile("config", "024", "", getConfigPath) = "Bez interfejsa" Then
         Exit Sub
     End If
 End Sub
 
-Private Sub trm_Timer()
-If Not DebugMode = True Then On Error Resume Next
 
-DoEvents
-    If DebugMode = False Then
-        If CheckInterface = True Then COM.output = "                   "
-    Else
-        COM.output = "                   "
-    End If
-End Sub
+
 

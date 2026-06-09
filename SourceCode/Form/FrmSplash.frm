@@ -132,7 +132,7 @@ Begin VB.Form FrmSplash
    End
    Begin VB.Label Label3 
       BackStyle       =   0  'Transparent
-      Caption         =   "Support: office@tecomatic.net"
+      Caption         =   "Support: office@tecomatic.rs"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   9.75
@@ -151,7 +151,7 @@ Begin VB.Form FrmSplash
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Year: 2009 - 2020"
+      Caption         =   "Year: 2009 - 2026"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   9.75

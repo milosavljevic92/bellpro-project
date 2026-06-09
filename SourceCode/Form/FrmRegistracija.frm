@@ -259,7 +259,7 @@ If Not DebugMode = True Then On Error Resume Next
         Unload Me
     Else
         MsgBox "Licenca koju ste uneli nije ispravna, mozda ste je pogresno uneli istu." _
-        + vbNewLine + "Kontakt: tecomatic@gmail.com", vbCritical
+        + vbNewLine + "Kontakt: office@tecomatic.rs", vbCritical
         TxtLicenca.Text = ""
         setDemoMode
         Exit Sub
