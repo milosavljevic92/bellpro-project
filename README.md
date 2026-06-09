@@ -34,4 +34,4 @@ We want to keep this project alive! If you decide to install BellPro in a school
 BellPro is released under the [MIT License](LICENSE) — free to use, modify, and redistribute,
 provided the original copyright notice is retained in all copies or substantial portions of the software.
 ---
-*Inspired by the legendary school bell projects of the past, specifically the work of Voja Milanović. http://vojo.milanovic.org/zvono.htm*
+*Inspired by the school bell projects of the past, specifically the work of Voja Milanović. http://vojo.milanovic.org/zvono.htm*
