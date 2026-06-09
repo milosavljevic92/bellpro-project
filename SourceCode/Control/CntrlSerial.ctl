@@ -1,12 +1,12 @@
 VERSION 5.00
 Object = "{648A5603-2C6E-101B-82B6-000000000014}#1.1#0"; "mscomm32.ocx"
 Begin VB.UserControl CntrlSerial 
-   ClientHeight    =   1605
+   ClientHeight    =   1575
    ClientLeft      =   0
    ClientTop       =   0
-   ClientWidth     =   780
-   ScaleHeight     =   1605
-   ScaleWidth      =   780
+   ClientWidth     =   630
+   ScaleHeight     =   1575
+   ScaleWidth      =   630
    Begin MSCommLib.MSComm COM 
       Left            =   0
       Top             =   720
@@ -41,7 +41,7 @@ If Not DebugMode = True Then On Error Resume Next
         Else
             With COM
                 .CommPort = Mid(portNumber, 4, 2)
-                .Settings = "2400,n,8,1"
+                .Settings = "9600,n,8,1"
                 .PortOpen = True
             
             End With
@@ -98,7 +98,7 @@ If Not DebugMode = True Then On Error Resume Next
 End Function
 Public Sub HitTheRelay(status As Boolean)
 If Not DebugMode = True Then On Error Resume Next
-    If GetProfile("config", "024", "", getConfigPath) = "Bell Comm" Then
+    If GetProfile("config", "024", "", getConfigPath) = "BellCommDirect" Then
         If CheckInterface() = True Then
             If GetProfile("config", "041", "", getConfigPath) = "1" Then
                 COM.RTSEnable = Not status
@@ -113,6 +113,6 @@ If Not DebugMode = True Then On Error Resume Next
     End If
 End Sub
 
+Private Sub UserControl_Initialize()
 
-
-
+End Sub

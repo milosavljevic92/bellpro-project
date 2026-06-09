@@ -102,7 +102,7 @@ Public Sub GenerateIniFileIfNotExist()
         "022=" & vbCrLf
         fs.Write _
         "023=" & "COM1" & vbCrLf & _
-        "024=" & "Bell Comm" & vbCrLf & _
+        "024=" & "BellCommDirect" & vbCrLf & _
         "025=" & "12" & vbCrLf & _
         "026=" & "1" & vbCrLf & _
         "027=" & "1" & vbCrLf & _

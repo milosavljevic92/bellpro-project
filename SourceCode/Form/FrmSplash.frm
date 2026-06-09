@@ -151,7 +151,7 @@ Begin VB.Form FrmSplash
    End
    Begin VB.Label Label2 
       BackStyle       =   0  'Transparent
-      Caption         =   "Year: 2009 - 2026"
+      Caption         =   "Year: 2007 - 2026"
       BeginProperty Font 
          Name            =   "Segoe UI"
          Size            =   9.75

@@ -34,7 +34,7 @@ Begin VB.Form FrmInterfejs
    Begin VB.CheckBox chDtrCtsEnabled 
       Appearance      =   0  'Flat
       BackColor       =   &H00E0E0E0&
-      Caption         =   "DTR - CTS Detekcija"
+      Caption         =   "Detekcija Interfejsa"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -54,7 +54,7 @@ Begin VB.Form FrmInterfejs
    Begin VB.CheckBox chInvertRTS 
       Appearance      =   0  'Flat
       BackColor       =   &H00E0E0E0&
-      Caption         =   "Invertuj RTS signal"
+      Caption         =   "Invertuj rad releja"
       BeginProperty Font 
          Name            =   "Arial"
          Size            =   9.75
@@ -69,7 +69,7 @@ Begin VB.Form FrmInterfejs
       Left            =   120
       TabIndex        =   5
       Top             =   2400
-      Width           =   2295
+      Width           =   2415
    End
    Begin VB.ComboBox CmbInterface 
       BeginProperty Font 
@@ -204,7 +204,8 @@ Private Sub GenerateInterfaceList()
 If Not DebugMode = True Then On Error Resume Next
     With CmbInterface
         .Clear
-        .AddItem "Bell Comm"
+        .AddItem "BellCommDirect"
+        .AddItem "BellProRelay"
         .AddItem "Bez interfejsa"
         .ListIndex = 0
     End With
