@@ -35,6 +35,7 @@ Form=Form\FrmZastita.frm
 Form=Form\FrmZvoni.frm
 UserControl=Control\CntrlSerial.ctl
 Object={CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0; msdatgrd.ocx
+Module=MdlBellProRelay; Module\MdlBellProRelay.bas
 ResFile32="Local.RES"
 IconForm="FrmMain"
 Startup="Sub Main"

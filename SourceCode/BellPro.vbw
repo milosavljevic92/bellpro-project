@@ -29,3 +29,4 @@ FrmVanNastavne = 0, 0, 0, 0, C, 156, 156, 1333, 806, C
 FrmZastita = 0, 0, 0, 0, C, 182, 182, 1359, 832, C
 FrmZvoni = 0, 0, 0, 0, C, 208, 208, 1385, 858, C
 CntrlSerial = 52, 52, 897, 634, C, -231, 132, 946, 782, C
+MdlBellProRelay = 0, 0, 0, 0, C
