@@ -35,7 +35,7 @@ If Not DebugMode = True Then On Error Resume Next
         Dim portNumberInt As Integer
         portNumberInt = Mid(portNumber, 4, 2)
         If IsCommExist(portNumberInt) = False Then
-            PrikaziPoruku T("CntrlSerial", "MsgGreskaPorta") & " " & PortBroj, "5"
+            PrikaziPoruku t("CntrlSerial", "MsgGreskaPorta") & " " & PortBroj, "5"
             OpenPort = False
             Exit Function
         Else
@@ -59,7 +59,7 @@ If Not DebugMode = True Then On Error Resume Next
             End If
             
             If COM.PortOpen = True Then
-                PrikaziPoruku "Port: " & portNumber & " " & T("CntrlSerial", "MsgPortOtvoren"), "5"
+                PrikaziPoruku "Port: " & portNumber & " " & t("CntrlSerial", "MsgPortOtvoren"), "5"
                 OpenPort = True
                 Exit Function
             End If
@@ -73,7 +73,7 @@ If Not DebugMode = True Then On Error Resume Next
         COM.RTSEnable = False
     End If
     If COM.PortOpen = True Then COM.PortOpen = False
-    PrikaziPoruku T("CntrlSerial", "MsgPortZatvoren") & " " & PortBroj, "5"
+    PrikaziPoruku t("CntrlSerial", "MsgPortZatvoren") & " " & PortBroj, "5"
 End Function
 Public Function CheckInterface() As Boolean
 If Not DebugMode = True Then On Error Resume Next
@@ -113,6 +113,3 @@ If Not DebugMode = True Then On Error Resume Next
     End If
 End Sub
 
-Private Sub UserControl_Initialize()
-
-End Sub
