@@ -32,8 +32,6 @@ Source: ".\source\vbRuntime\VB6_Full_Runtime_Setup.exe"; Flags: dontcopy
 Source: ".\source\dll\mscomm32.ocx"; DestDir: "{app}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\source\dll\msdatgrd.ocx"; DestDir: "{app}"; Flags: restartreplace ignoreversion regserver 32bit
 Source: ".\source\BellPro.exe"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\source\config.ini"; DestDir: "{app}"; Flags: ignoreversion
-Source: ".\source\base.sqlite"; DestDir: "{app}"; Flags: ignoreversion
 
 [Icons]
 Name: "{group}\{#MyAppName}"; Filename: "{app}\{#MyAppExeName}"; IconFilename: "{app}\{#MyAppExeName}"

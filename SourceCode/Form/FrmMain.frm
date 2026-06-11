@@ -96,8 +96,8 @@ Begin VB.Form FrmMain
       TabIndex        =   4
       Top             =   240
       Width           =   615
-      _ExtentX        =   1085
-      _ExtentY        =   1085
+      _extentx        =   1085
+      _extenty        =   1085
    End
    Begin VB.Timer trmTime 
       Interval        =   10
@@ -330,11 +330,12 @@ If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     Dim boolTemp As Boolean
     Dim demoString As String
     Set Konekcija = New ADODB.Connection
-    boolTemp = checkDoesDBexist(App.Path & "\BellPro.sqlite")
-    If boolTemp = False Then
-        MsgBox t("FrmMain", "MsgBazaNijePostoji"), vbCritical
+    
+    If Not CreateDatabaseIfNotExists() Then
+        MsgBox "Error due database creation.", vbCritical
         End
     End If
+    
     Konekcija.CursorLocation = adUseClient
     Konekcija.Open "Driver={SQLite3 ODBC Driver};Database=" & App.Path & "\BellPro.sqlite;" & ";"
     

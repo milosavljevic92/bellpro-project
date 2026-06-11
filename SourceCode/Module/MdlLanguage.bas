@@ -1,16 +1,12 @@
 Attribute VB_Name = "MdlLanguage"
-'=============================================================
-' BellPro - Localization Module
-' Tecomatic | office@tecomatic.rs
-'=============================================================
 Option Explicit
 
 Public CurrentLang As String
 
 Private Type LangEntry
-    Section As String
-    Key     As String
-    Value   As String
+    section As String
+    key     As String
+    value   As String
 End Type
 
 Private langCache()  As LangEntry
@@ -19,13 +15,13 @@ Private langLoaded   As Boolean
 
 Public Function GetSavedLang() As String
     Dim saved As String
-    saved = GetProfile("config", "050", "Serbian", getConfigPath)
+    saved = GetProfile("config", "042", "Serbian", getConfigPath)
     If saved = "" Then saved = "Serbian"
     GetSavedLang = saved
 End Function
 
 Public Sub SaveLang(langCode As String)
-    WriteProfile "config", "050", langCode, getConfigPath
+    WriteProfile "config", "042", langCode, getConfigPath
 End Sub
 
 Public Function GetAvailableLanguages() As String()
@@ -60,21 +56,21 @@ Public Sub InitLanguage(langCode As String)
     Call LoadLangFile(App.Path & "\language\" & langCode & "_language.lng")
 End Sub
 
-Public Function T(section As String, key As String) As String
+Public Function t(section As String, key As String) As String
     If Not langLoaded Then
-        T = key
+        t = key
         Exit Function
     End If
     Dim i As Long
     Dim sU As String: sU = UCase(section)
     Dim kU As String: kU = UCase(key)
     For i = 0 To langCount - 1
-        If UCase(langCache(i).Section) = sU And UCase(langCache(i).Key) = kU Then
-            T = langCache(i).Value
+        If UCase(langCache(i).section) = sU And UCase(langCache(i).key) = kU Then
+            t = langCache(i).value
             Exit Function
         End If
     Next i
-    T = key
+    t = key
 End Function
 
 Public Sub ApplyLanguage(frm As Form)
@@ -84,11 +80,9 @@ Public Sub ApplyLanguage(frm As Form)
     sName = frm.Name
 
     Dim cap As String
-    cap = T(sName, "Caption")
+    cap = t(sName, "Caption")
     If cap <> "Caption" Then frm.Caption = cap
 
-    ' On Error Resume Next wraps the ENTIRE loop so that controls without
-    ' a .Caption property (Timer, Line, Shape, Image, Grid) do not abort the loop
     On Error Resume Next
 
     Dim ctrl As Control
@@ -96,12 +90,12 @@ Public Sub ApplyLanguage(frm As Form)
         Dim ctrlName As String
         ctrlName = ctrl.Name
         Dim val As String
-        val = T(sName, ctrlName)
+        val = t(sName, ctrlName)
         If val <> ctrlName Then
             ctrl.Caption = val
         End If
         Dim tipVal As String
-        tipVal = T(sName, ctrlName & "_Tip")
+        tipVal = t(sName, ctrlName & "_Tip")
         If tipVal <> ctrlName & "_Tip" Then
             ctrl.ToolTipText = tipVal
         End If
@@ -116,11 +110,8 @@ Public Sub ApplyLanguageToAll()
         ApplyLanguage frm
     Next frm
 End Sub
-
-' RefreshAllForms - call after language change to update everything immediately
 Public Sub RefreshAllForms()
     Call ApplyLanguageToAll
-    ' Refresh FrmMain if loaded - menus, grid, status bar
     On Error Resume Next
     If Not FrmMain Is Nothing Then
         If FrmMain.Visible Then
@@ -132,13 +123,13 @@ End Sub
 
 Public Function GetDayName(index As Integer) As String
     Select Case index
-        Case 1: GetDayName = T("FrmVanNastavne", "ItemPonedeljak")
-        Case 2: GetDayName = T("FrmVanNastavne", "ItemUtorak")
-        Case 3: GetDayName = T("FrmVanNastavne", "ItemSreda")
-        Case 4: GetDayName = T("FrmVanNastavne", "ItemCetvrtak")
-        Case 5: GetDayName = T("FrmVanNastavne", "ItemPetak")
-        Case 6: GetDayName = T("FrmVanNastavne", "ItemSubota")
-        Case 7: GetDayName = T("FrmVanNastavne", "ItemNedelja")
+        Case 1: GetDayName = t("FrmVanNastavne", "ItemPonedeljak")
+        Case 2: GetDayName = t("FrmVanNastavne", "ItemUtorak")
+        Case 3: GetDayName = t("FrmVanNastavne", "ItemSreda")
+        Case 4: GetDayName = t("FrmVanNastavne", "ItemCetvrtak")
+        Case 5: GetDayName = t("FrmVanNastavne", "ItemPetak")
+        Case 6: GetDayName = t("FrmVanNastavne", "ItemSubota")
+        Case 7: GetDayName = t("FrmVanNastavne", "ItemNedelja")
         Case Else: GetDayName = ""
     End Select
 End Function
@@ -195,9 +186,9 @@ Private Sub LoadLangFile(filePath As String)
             If langCount > UBound(langCache) Then
                 ReDim Preserve langCache(langCount + 63)
             End If
-            langCache(langCount).Section = currentSection
-            langCache(langCount).Key = Trim(Left(lineStr, eqPos - 1))
-            langCache(langCount).Value = Mid(lineStr, eqPos + 1)
+            langCache(langCount).section = currentSection
+            langCache(langCount).key = Trim(Left(lineStr, eqPos - 1))
+            langCache(langCount).value = Mid(lineStr, eqPos + 1)
             langCount = langCount + 1
         End If
 SkipLine:

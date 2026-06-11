@@ -203,14 +203,12 @@ Private Sub Form_Unload(Cancel As Integer)
 If Not DebugMode = True Then On Error Resume Next
     FrmMain.Show
 End Sub
-
 Private Sub ImageLogo_Click()
    Dim url As String
     url = "https://tecomatic.rs"
 
     ShellExecute 0, "open", url, vbNullString, vbNullString, 1
 End Sub
-
 Private Sub lblClose_Click()
     Unload Me
 End Sub

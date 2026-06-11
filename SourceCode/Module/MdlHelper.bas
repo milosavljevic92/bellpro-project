@@ -117,6 +117,7 @@ Public Sub GenerateIniFileIfNotExist()
         "036=" & "0" & vbCrLf & _
         "040=" & "1" & vbCrLf & _
         "041=" & "0" & vbCrLf & _
+        "042=" & "Serbian" & vbCrLf & _
         "037=" & "1" & vbCrLf
         fs.Close
     End If
