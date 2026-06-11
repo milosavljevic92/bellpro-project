@@ -1,0 +1,220 @@
+; BellPro - Danish Language File
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Definer helligdage
+
+[FrmExport]
+Caption=Eksporter skema
+cmdIzvezi=Eksporter
+LblRaspored=Skema:
+MsgRasporedPrazan=Skema er tom, eksport ikke mulig
+MsgUspesnoIzvezen=Eksport lykkedes!
+ItemVannastavne=Fritidsaktiviteter
+
+[FrmInterfejs]
+Caption=BellPro Interface
+lblBellInterfejs=Interface:
+LblBrojPorta=Port:
+cmdTest=TEST
+cmdRefresh=Opdater
+chDtrCtsEnabled=Interface registrering
+chInvertRTS=Inverter relae
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Ingen interface
+MsgTestInterfejsa=Test vil aktivere relaeet. Klokken ringer 5 sek hvis tilsluttet. Fortsaet?
+
+[FrmMain]
+mnuRaspored=&Skema
+mnusvakodnevni=&Rediger
+mnuvannastavne=&Fritidsaktiviteter
+MnuUvezi=&Importer
+MnuIzvezi=&Eksporter
+mnupodesavanja=&Indstillinger
+mnupodprograma=&Program
+mnuraspusti=&Ferier
+mnupraznici=&Helligdage
+mnuzastitap=&Sikkerhed
+mnuinterfejs=&Interface
+mnuprogramu=&Program
+mnuruucno=&Manuel klokke
+mnuzastitaz=&Las
+MnuOtkljucaj=Oplas
+mnuupdate=&Opdater
+mnuAbout=Om...
+mnutray=&Luk vindue
+mnuRegistracija=&Registrering
+mnuizlaz=&Afslut
+ColDuzinaZvona=Varighed
+TipPortOtvoren=Port aben:
+TipGreskaPorta=Fejl ved abnelse af port!
+MsgBazaNijePostoji=Databasen blev ikke fundet! Kontakt support.
+MsgRasporedPrimenjen=Skema anvendt
+MsgFajlNepravilan=Ugyldigt filformat!
+MsgUspesnoUvezen=Import lykkedes!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Tid:
+StatusDatum=| Dato:
+StatusDanasJe=| I dag:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Mandag
+DanUtorak=Tirsdag
+DanSreda=Onsdag
+DanCetvrtak=Torsdag
+DanPetak=Fredag
+DanSubota=Lordag
+DanNedelja=Sondag
+ColNaziv=Navn
+ColVreme=Tid
+MsgIzlaz=Luk programmet? Klokken deaktiveres.
+CmbRaspored_Tip=Skemaer fra databasen
+ImgDissconn_Tip=Port aben, interface ikke fundet
+ImgConnected_Tip=BellPro tilsluttet
+ImgZelena_Tip=Klokken ringer i dag
+ImgCrvena_Tip=Ingen klokke i dag
+cmdPrimeni=Anvend
+MsgZvonoVreme=Klokke kl.:
+MsgZvonoOpis=Beskrivelse:
+
+[FrmNoviRaspored]
+Caption=Nyt skema
+lblNazivRasporeda=Skemanavn:
+MsgImePostoji=Skemanavnet findes allerede!
+
+[FrmOtkljucavanje]
+Caption=Indtast PIN
+cmdPrijavise=Log ind
+MsgLozinkaNeisp=Forkert PIN!
+
+[FrmPodesavanje]
+Caption=Indstillinger
+Frame2=Klokke
+lblDuzinaZvona=Klokkevarighed:
+chZvonoPrekoRazglasa=Klokke via hojtaler
+chVannastavne=Fritidsaktiviteter
+chZastitaLozinkom=Adgangskodebeskyttelse
+chStartWithWin=Start med Windows
+chObavestiZvono=Besked ved klokkeslag
+chStartMin=Start minimeret
+chNeZvoni=Ring ikke
+chNeZvoniPraznici=Ring ikke pa helligdage
+chNeZvoniSubotom=Ring ikke om lordagen
+chNeZvoniNedeljom=Ring ikke om sondagen
+chNeZvoniRaspust=Ring ikke i ferier
+lblJezik=Sprog:
+SufixSec= sek
+MsgJezikPromenjen=Sprog aendret. Abn vinduer igen.
+
+[FrmRaspusti]
+Caption=Angiv ferier
+Label5=Ferie 1
+Label6=Ferie 2
+Label9=Ferie 3
+Label12=Ferie 4
+Label1=til
+Label3=til
+Label7=til
+Label10=til
+
+[FrmRegistracija]
+Caption= BellPro | Registrering
+cmdDemo=DEMO
+cmdCopy=Kopier
+cmdRegistruj=Registrer
+lblNazivUstanove=Institution:
+LblParametar=Parameter:
+LblLicenca=Licens:
+MsgUspesnoReg=Registrering lykkedes! Tak fordi du valgte BellPro!
+MsgNeispravnaLicenca=Ugyldig licens. Kontroller og pr?v igen.
+MsgKontakt=Kontakt: office@tecomatic.rs
+MsgGreskaPriReg=Registreringsfejl. Programmet lukkes. Pr?v igen.
+
+[FrmRucnoZ]
+Caption=Manuel klokke
+cmdRucnoZvoni=Ring
+CmdUpali=Ring
+CmdUgasi=Stop
+ItemZvono=Klokke
+ItemRazglas=Hojtaler
+ItemZvonoRazglas=Klokke + Hojtaler
+
+[FrmSplash]
+lblDatumInstalacije=Registreret:
+Label1=BellPro - School version
+LblVersionPrefix=Version:
+LblUserPrefix=Bruger:
+LblDatePrefix=Dato:
+Label3=Support: office@tecomatic.rs
+Label2=Ar: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Skemah?ndtering
+cmdObrisiVreme=Slet
+cmdSacuvaj=Gem
+cmdDodaj=Tilf?j
+cmdNazad=Tilbage
+cmdNovi=Tilf?j skema
+cmdObrisiRaspored=Slet skema
+lblLen=Varighed:
+LblDuzinaZvona=Varighed:
+lblNazivZvona=Beskrivelse:
+lblVreme=Tid:
+ColDuzinaZvona=Varighed
+SufixSec= sek
+MsgSvakodnevniSistemski=Systemskema kan ikke slettes!
+MsgRasporedUUpotrebi=Skemaet er i brug!
+MsgPotvrda1=Slet skema
+MsgPotvrda2=Slet denne tidsregistrering?
+MsgVremeNepravilno=Ugyldigt tidsformat!
+MsgUspesnoSacuvano=Gemt!
+ColNaziv=Navn
+ColVreme=Tid
+
+[FrmVanNastavne]
+Caption=Fritidsaktiviteter
+cmdObrisi=Slet
+cmdSacuvaj=Gem
+cmdDodaj=Tilf?j
+cmdNazad=Tilbage
+lblLen=Varighed:
+LblDuzinaZvona=Varighed:
+lblVreme=Tid:
+lblOpisZvona=Beskrivelse:
+lblDan=Dag:
+ColDuzinaZvona=Varighed
+SufixSec= sek
+ItemPonedeljak=Mandag
+ItemUtorak=Tirsdag
+ItemSreda=Onsdag
+ItemCetvrtak=Torsdag
+ItemPetak=Fredag
+ItemSubota=Lordag
+ItemNedelja=Sondag
+MsgPotvrda=Slet denne tidsregistrering?
+MsgVremeNepravilno=Ugyldigt tidsformat!
+ColNaziv=Navn
+ColVreme=Tid
+ColDan=Dag
+
+[FrmZastita]
+Caption=Skift PIN
+cmdSacuvaj=Gem
+lblTrenutniPin=Nuvaerende PIN [4]:
+lblNoviPin=Ny PIN:
+lblPonoviNoviPin=Bekraeft PIN:
+MsgNeispravanPin=Forkert nuvaerende PIN!
+MsgNistePotvrdili=Ny PIN ikke bekraeftet!
+MsgPinNijeIsti=PIN matcher ikke!
+MsgNoviPinPostavljen=Ny PIN indstillet!
+
+[MdlCommunication]
+MsgPortZatvoren=Port lukket!
+
+[MdlStart]
+MsgVecPokrenut=Programmet korer allerede!
+
+[CntrlSerial]
+MsgGreskaPorta=Fejl ved abnelse af port:
+MsgPortOtvoren=Port abnet!
+MsgPortZatvoren=Port lukket!
