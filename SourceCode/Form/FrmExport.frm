@@ -97,13 +97,13 @@ If Not DebugMode = True Then On Error Resume Next
     SaveFile.lpstrFileTitle = SaveFile.lpstrFile
     SaveFile.nMaxFileTitle = SaveFile.nMaxFile
     SaveFile.lpstrInitialDir = "C:\"
-    SaveFile.lpstrTitle = "Sacuvaj XML u ..."
+    SaveFile.lpstrTitle = "Save As XML..."
     SaveFile.flags = 0
     lReturn = GetSaveFileName(SaveFile)
     If lReturn = 0 Then
         Exit Sub
     Else
-        If CmbRaspored.Text = T("FrmExport", "ItemVannastavne") Then
+        If CmbRaspored.Text = t("FrmExport", "ItemVannastavne") Then
                 GenerisiXML Trim(SaveFile.lpstrFile) & ".xml", "SELECT * FROM raspored WHERE Raspored='VanNastavni'"
             Else
                 GenerisiXML Trim(SaveFile.lpstrFile) & ".xml", "SELECT * FROM raspored WHERE Raspored='" & CmbRaspored.Text & "'"
@@ -121,13 +121,13 @@ If Not DebugMode = True Then On Error Resume Next
     CmbRaspored.Clear
     Set raspored = New ADODB.Recordset
     raspored.Open "SELECT DISTINCT Naziv FROM NaziviRasporeda", FrmMain.Konekcija, adOpenStatic, adLockOptimistic, adCmdText
-    CmbRaspored.AddItem T("FrmExport", "ItemVannastavne")
+    CmbRaspored.AddItem t("FrmExport", "ItemVannastavne")
     For x = 1 To raspored.RecordCount
        CmbRaspored.AddItem raspored.Fields("Naziv").value
        raspored.MoveNext
     Next x
     raspored.Close
-    CmbRaspored.Text = T("FrmExport", "ItemVannastavne")
+    CmbRaspored.Text = t("FrmExport", "ItemVannastavne")
 End Sub
 Private Sub GenerisiXML(ImeFajla As String, sqlString As String)
 If Not DebugMode = True Then On Error Resume Next
@@ -138,7 +138,7 @@ If Not DebugMode = True Then On Error Resume Next
             .Open sqlString, FrmMain.Konekcija, adOpenStatic, adLockOptimistic, adCmdText
             If .RecordCount = 0 Then
                 .Close
-                MsgBox T("FrmExport", "MsgRasporedPrazan"), vbCritical
+                MsgBox t("FrmExport", "MsgRasporedPrazan"), vbCritical
                 Exit Sub
             End If
             Open ImeFajla For Output As #1
@@ -155,7 +155,7 @@ If Not DebugMode = True Then On Error Resume Next
                 x = x + 1
                 DoEvents
                 Print #1, "<record exported='" & Now & "' id='" & x & "'>"
-                For i = 0 To .Fields.Count - 1
+                For i = 0 To .Fields.count - 1
                 DoEvents
                 Print #1, "<" & .Fields(i).Name & ">" & .Fields(i).value & "</" & .Fields(i).Name & ">"
                 Next i
@@ -169,7 +169,7 @@ If Not DebugMode = True Then On Error Resume Next
             End If
             .Close
     End With
-           MsgBox T("FrmExport", "MsgUspesnoIzvezen"), vbInformation
+           MsgBox t("FrmExport", "MsgUspesnoIzvezen"), vbInformation
 End Sub
 Private Sub Form_Unload(Cancel As Integer)
 If Not DebugMode = True Then On Error Resume Next

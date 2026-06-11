@@ -15,11 +15,14 @@ Public Function CreateDatabaseIfNotExists() As Boolean
 
     Set cn = New ADODB.Connection
     cn.Open "Driver={SQLite3 ODBC Driver};Database=" & dbFile & ";"
+
+    ' Tabela rasporeda
     cn.Execute _
         "CREATE TABLE NaziviRasporeda (" & _
         "ID INTEGER PRIMARY KEY, " & _
         "Naziv TEXT)"
 
+    ' Stavke rasporeda
     cn.Execute _
         "CREATE TABLE Raspored (" & _
         "ID INTEGER PRIMARY KEY AUTOINCREMENT, " & _
@@ -27,7 +30,32 @@ Public Function CreateDatabaseIfNotExists() As Boolean
         "Naziv TEXT, " & _
         "Vreme TEXT, " & _
         "Dan TEXT, " & _
-        "DuzinaZvona TEXT)"
+        "DuzinaZvona INTEGER)"
+
+    ' Podrazumevani raspored
+    cn.Execute _
+        "INSERT INTO NaziviRasporeda (ID, Naziv) " & _
+        "VALUES (1, 'Svakodnevni')"
+
+    ' Najava
+    cn.Execute _
+        "INSERT INTO Raspored " & _
+        "(Raspored, Naziv, Vreme, Dan, DuzinaZvona) VALUES (" & _
+        "'Svakodnevni'," & _
+        "'Najava'," & _
+        "'07:30:00'," & _
+        "'pon - ned'," & _
+        "3)"
+
+    ' Poèetak prvog èasa
+    cn.Execute _
+        "INSERT INTO Raspored " & _
+        "(Raspored, Naziv, Vreme, Dan, DuzinaZvona) VALUES (" & _
+        "'Svakodnevni'," & _
+        "'Pocetak prvog casa'," & _
+        "'08:00:00'," & _
+        "'pon - ned'," & _
+        "5)"
 
     cn.Close
     Set cn = Nothing
@@ -46,4 +74,3 @@ Greska:
     CreateDatabaseIfNotExists = False
 
 End Function
-

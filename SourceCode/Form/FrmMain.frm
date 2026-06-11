@@ -96,8 +96,8 @@ Begin VB.Form FrmMain
       TabIndex        =   4
       Top             =   240
       Width           =   615
-      _extentx        =   1085
-      _extenty        =   1085
+      _ExtentX        =   1085
+      _ExtentY        =   1085
    End
    Begin VB.Timer trmTime 
       Interval        =   10
@@ -516,7 +516,7 @@ If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     OpenFile.lpstrFileTitle = OpenFile.lpstrFile
     OpenFile.nMaxFileTitle = OpenFile.nMaxFile
     OpenFile.lpstrInitialDir = "C:\"
-    OpenFile.lpstrTitle = "Ucitaj XML file..."
+    OpenFile.lpstrTitle = "Load XML file..."
     OpenFile.flags = 0
     lReturn = GetOpenFileName(OpenFile)
     If lReturn = 0 Then
