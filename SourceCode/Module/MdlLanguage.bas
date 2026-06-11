@@ -30,7 +30,7 @@ Public Function GetAvailableLanguages() As String()
     count = 0
     ReDim result(0)
     Dim langPath As String
-    langPath = App.Path & "\language\"
+    langPath = App.Path & "\Language\"
     Dim fname As String
     fname = Dir(langPath & "*_language.lng")
     Do While fname <> ""
@@ -53,7 +53,7 @@ Public Sub InitLanguage(langCode As String)
     langLoaded = False
     langCount = 0
     ReDim langCache(63)
-    Call LoadLangFile(App.Path & "\language\" & langCode & "_language.lng")
+    Call LoadLangFile(App.Path & "\Language\" & langCode & "_language.lng")
 End Sub
 
 Public Function t(section As String, key As String) As String

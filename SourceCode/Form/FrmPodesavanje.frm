@@ -354,7 +354,7 @@ End Sub
 Private Sub Form_Load()
     ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
-    ' Populate language combo
+
     Dim langs() As String
     Dim li As Integer
     langs = GetAvailableLanguages()
