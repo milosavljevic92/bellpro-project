@@ -3,7 +3,7 @@ Begin VB.Form FrmPodesavanje
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Podesavanja:"
-   ClientHeight    =   4665
+   ClientHeight    =   4980
    ClientLeft      =   2280
    ClientTop       =   3450
    ClientWidth     =   3870
@@ -11,7 +11,7 @@ Begin VB.Form FrmPodesavanje
    LinkTopic       =   "Form4"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4665
+   ScaleHeight     =   4980
    ScaleWidth      =   3870
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame2 
@@ -68,7 +68,7 @@ Begin VB.Form FrmPodesavanje
       Height          =   1695
       Left            =   120
       TabIndex        =   12
-      Top             =   1560
+      Top             =   1800
       Width           =   3615
       Begin VB.CheckBox chZvonoPrekoRazglasa 
          Appearance      =   0  'Flat
@@ -199,7 +199,7 @@ Begin VB.Form FrmPodesavanje
       Height          =   1335
       Left            =   120
       TabIndex        =   11
-      Top             =   3240
+      Top             =   3600
       Width           =   3615
       Begin VB.CheckBox chNeZvoni 
          Appearance      =   0  'Flat
@@ -315,11 +315,11 @@ Begin VB.Form FrmPodesavanje
          Strikethrough   =   0   'False
       EndProperty
       Height          =   360
-      Left            =   2040
+      Left            =   240
       Style           =   2  'Dropdown List
       TabIndex        =   17
-      Top             =   1200
-      Width           =   1695
+      Top             =   1440
+      Width           =   1935
    End
    Begin VB.Label lblJezik 
       BackColor       =   &H00E0E0E0&

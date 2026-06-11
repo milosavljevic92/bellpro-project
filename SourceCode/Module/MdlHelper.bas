@@ -107,7 +107,7 @@ Public Sub GenerateIniFileIfNotExist()
         "026=" & "1" & vbCrLf & _
         "027=" & "1" & vbCrLf & _
         "028=" & "0" & vbCrLf & _
-        "029=" & "1" & vbCrLf & _
+        "029=" & "0" & vbCrLf & _
         "030=" & "1" & vbCrLf & _
         "031=" & "1" & vbCrLf & _
         "032=" & "0" & vbCrLf & _
