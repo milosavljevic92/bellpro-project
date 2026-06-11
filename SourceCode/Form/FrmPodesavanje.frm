@@ -3,7 +3,7 @@ Begin VB.Form FrmPodesavanje
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Podesavanja:"
-   ClientHeight    =   4065
+   ClientHeight    =   4665
    ClientLeft      =   2280
    ClientTop       =   3450
    ClientWidth     =   3870
@@ -11,7 +11,7 @@ Begin VB.Form FrmPodesavanje
    LinkTopic       =   "Form4"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4065
+   ScaleHeight     =   4665
    ScaleWidth      =   3870
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame Frame2 
@@ -68,7 +68,7 @@ Begin VB.Form FrmPodesavanje
       Height          =   1695
       Left            =   120
       TabIndex        =   12
-      Top             =   1080
+      Top             =   1560
       Width           =   3615
       Begin VB.CheckBox chZvonoPrekoRazglasa 
          Appearance      =   0  'Flat
@@ -196,10 +196,10 @@ Begin VB.Form FrmPodesavanje
       BackColor       =   &H00E0E0E0&
       BorderStyle     =   0  'None
       ForeColor       =   &H80000008&
-      Height          =   1215
+      Height          =   1335
       Left            =   120
       TabIndex        =   11
-      Top             =   2760
+      Top             =   3240
       Width           =   3615
       Begin VB.CheckBox chNeZvoni 
          Appearance      =   0  'Flat
@@ -302,6 +302,44 @@ Begin VB.Form FrmPodesavanje
          Width           =   2775
       End
    End
+   Begin VB.ComboBox cmbJezik 
+      Appearance      =   0  'Flat
+      BackColor       =   &H0080FFFF&
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   238
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   360
+      Left            =   2040
+      Style           =   2  'Dropdown List
+      TabIndex        =   17
+      Top             =   1200
+      Width           =   1695
+   End
+   Begin VB.Label lblJezik 
+      BackColor       =   &H00E0E0E0&
+      BackStyle       =   0  'Transparent
+      Caption         =   "Jezik / Language:"
+      BeginProperty Font 
+         Name            =   "Arial"
+         Size            =   9.75
+         Charset         =   238
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   240
+      TabIndex        =   16
+      Top             =   1200
+      Width           =   1815
+   End
 End
 Attribute VB_Name = "FrmPodesavanje"
 Attribute VB_GlobalNameSpace = False
@@ -314,7 +352,16 @@ Private Sub chZastitaLozinkom_Click()
     ZastitaMenjanja = True
 End Sub
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
+    ' Populate language combo
+    Dim langs() As String
+    Dim li As Integer
+    langs = GetAvailableLanguages()
+    For li = 0 To UBound(langs)
+        cmbJezik.AddItem langs(li)
+        If UCase(langs(li)) = UCase(CurrentLang) Then cmbJezik.ListIndex = li
+    Next li
     sldDuzinaZvona.value = GetProfile("config", "025", 8, getConfigPath)
     chStartWithWin.value = GetProfile("config", "026", chStartWithWin.value, getConfigPath)
     chObavestiZvono.value = GetProfile("config", "027", chObavestiZvono.value, getConfigPath)
@@ -327,9 +374,20 @@ If Not DebugMode = True Then On Error Resume Next
     chZastitaLozinkom.value = GetProfile("config", "035", chZastitaLozinkom.value, getConfigPath)
     chVannastavne.value = GetProfile("config", "036", chVannastavne.value, getConfigPath)
     chZvonoPrekoRazglasa.value = GetProfile("config", "037", chZvonoPrekoRazglasa.value, getConfigPath)
-    lblDuzinaZvona.Caption = "Duzina zvona: " & sldDuzinaZvona.value & " sec"
+    lblDuzinaZvona.Caption = t("FrmPodesavanje", "LblDuzinaZvona") & " " & sldDuzinaZvona.value & t("FrmPodesavanje", "SufixSec")
     ZastitaMenjanja = False
 End Sub
+Private Sub cmbJezik_Click()
+If Not DebugMode = True Then On Error Resume Next
+    Dim selLang As String
+    selLang = cmbJezik.Text
+    If selLang = "" Or selLang = CurrentLang Then Exit Sub
+    Call InitLanguage(selLang)
+    Call SaveLang(selLang)
+    Call RefreshAllForms
+    lblDuzinaZvona.Caption = t("FrmPodesavanje", "LblDuzinaZvona") & " " & sldDuzinaZvona.value & t("FrmPodesavanje", "SufixSec")
+End Sub
+
 Private Sub Form_Unload(Cancel As Integer)
 If Not DebugMode = True Then On Error Resume Next
     WriteProfile "config", "025", sldDuzinaZvona.value, getConfigPath
@@ -356,6 +414,6 @@ End Sub
 
 Private Sub sldDuzinaZvona_Change(MyVal As Long, myMaxVal As Long)
 If Not DebugMode = True Then On Error Resume Next
-    lblDuzinaZvona.Caption = "Duzina zvona: " & sldDuzinaZvona.value & " sec"
+    lblDuzinaZvona.Caption = t("FrmPodesavanje", "LblDuzinaZvona") & " " & sldDuzinaZvona.value & t("FrmPodesavanje", "SufixSec")
 End Sub
 

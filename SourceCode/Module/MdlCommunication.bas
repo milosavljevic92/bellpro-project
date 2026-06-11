@@ -21,14 +21,14 @@ On Error Resume Next
     portNumber = GetProfile("config", "023", "COM1", getConfigPath)
     OpenPort = FrmMain.CntrlSerial.OpenPort(portNumber)
     If OpenPort = True Then
-        FrmMain.ImgDissconn.ToolTipText = "Port otvoren: " + portNumber
+        FrmMain.ImgDissconn.ToolTipText = T("FrmMain", "TipPortOtvoren") & " " & portNumber
     Else
-        FrmMain.ImgDissconn.ToolTipText = "Greska sa otvaranjem porta!"
+        FrmMain.ImgDissconn.ToolTipText = T("FrmMain", "TipGreskaPorta")
     End If
 End Function
 Public Function ClosePort() As Boolean
     ClosePort = FrmMain.CntrlSerial.ClosePort
-    PrikaziPoruku "Port zatvoren! ", "5"
+    PrikaziPoruku T("CntrlSerial", "MsgPortZatvoren"), "5"
 End Function
 Public Function CheckInterface() As Boolean
     CheckInterface = FrmMain.CntrlSerial.CheckInterface

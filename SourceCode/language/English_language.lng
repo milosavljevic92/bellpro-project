@@ -1,0 +1,220 @@
+; BellPro - English Language File
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Define Holidays
+
+[FrmExport]
+Caption=Export Schedule
+cmdIzvezi=Export
+LblRaspored=Schedule:
+MsgRasporedPrazan=Schedule is empty, cannot export
+MsgUspesnoIzvezen=Schedule exported!
+ItemVannastavne=Extracurricular
+
+[FrmInterfejs]
+Caption=BellPro Interface
+lblBellInterfejs=Bell interface:
+LblBrojPorta=Port:
+cmdTest=TEST
+cmdRefresh=Refresh
+chDtrCtsEnabled=Interface detection
+chInvertRTS=Invert relay
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=No interface
+MsgTestInterfejsa=Test will activate the relay. Bell will ring for 5 sec if connected. Continue?
+
+[FrmMain]
+mnuRaspored=&Schedule
+mnusvakodnevni=&Edit
+mnuvannastavne=&Extracurricular
+MnuUvezi=&Import
+MnuIzvezi=&Export
+mnupodesavanja=&Settings
+mnupodprograma=&Application
+mnuraspusti=&Breaks
+mnupraznici=&Holidays
+mnuzastitap=&Security
+mnuinterfejs=&Interface
+mnuprogramu=&Program
+mnuruucno=&Manual Bell
+mnuzastitaz=&Lock
+MnuOtkljucaj=Unlock
+mnuupdate=&Update
+mnuAbout=About...
+mnutray=&Close Window
+mnuRegistracija=&Registration
+mnuizlaz=&Exit
+ColDuzinaZvona=Duration
+TipPortOtvoren=Port open:
+TipGreskaPorta=Error opening port!
+MsgBazaNijePostoji=Database not found! Contact technical support.
+MsgRasporedPrimenjen=Schedule applied
+MsgFajlNepravilan=Invalid file format!
+MsgUspesnoUvezen=Schedule imported successfully!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Time:
+StatusDatum=| Date:
+StatusDanasJe=| Today:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Monday
+DanUtorak=Tuesday
+DanSreda=Wednesday
+DanCetvrtak=Thursday
+DanPetak=Friday
+DanSubota=Saturday
+DanNedelja=Sunday
+ColNaziv=Name
+ColVreme=Time
+MsgIzlaz=Close program? Bell will stop ringing.
+CmbRaspored_Tip=Schedules from database
+ImgDissconn_Tip=Port open, interface not found
+ImgConnected_Tip=BellPro interface connected
+ImgZelena_Tip=Bell rings today
+ImgCrvena_Tip=No bell today
+cmdPrimeni=Apply
+MsgZvonoVreme=Bell at:
+MsgZvonoOpis=Description:
+
+[FrmNoviRaspored]
+Caption=New Schedule
+lblNazivRasporeda=Schedule name:
+MsgImePostoji=Schedule name already exists!
+
+[FrmOtkljucavanje]
+Caption=Enter PIN
+cmdPrijavise=Log in
+MsgLozinkaNeisp=Incorrect PIN!
+
+[FrmPodesavanje]
+Caption=Settings
+Frame2=Bell
+lblDuzinaZvona=Bell duration:
+chZvonoPrekoRazglasa=Bell via intercom
+chVannastavne=Extracurricular
+chZastitaLozinkom=Password protection
+chStartWithWin=Start with Windows
+chObavestiZvono=Notify on ring
+chStartMin=Start minimized
+chNeZvoni=Do not ring
+chNeZvoniPraznici=No ring on holidays
+chNeZvoniSubotom=No ring on Saturdays
+chNeZvoniNedeljom=No ring on Sundays
+chNeZvoniRaspust=No ring during breaks
+lblJezik=Language:
+SufixSec= sec
+MsgJezikPromenjen=Language changed. Reopen forms to refresh.
+
+[FrmRaspusti]
+Caption=Set Breaks
+Label5=Break 1
+Label6=Break 2
+Label9=Break 3
+Label12=Break 4
+Label1=to
+Label3=to
+Label7=to
+Label10=to
+
+[FrmRegistracija]
+Caption= BellPro | Registration
+cmdDemo=DEMO
+cmdCopy=Copy
+cmdRegistruj=Register
+lblNazivUstanove=Institution:
+LblParametar=Parameter:
+LblLicenca=License:
+MsgUspesnoReg=Registered successfully! Thank you for choosing BellPro!
+MsgNeispravnaLicenca=Invalid license. Please check and try again.
+MsgKontakt=Contact: office@tecomatic.rs
+MsgGreskaPriReg=Registration error. Program will close. Please retry.
+
+[FrmRucnoZ]
+Caption=Manual Bell
+cmdRucnoZvoni=Ring Bell
+CmdUpali=Ring Bell
+CmdUgasi=Stop Bell
+ItemZvono=Bell
+ItemRazglas=Intercom
+ItemZvonoRazglas=Bell + Intercom
+
+[FrmSplash]
+lblDatumInstalacije=Registered:
+Label1=BellPro - School version
+LblVersionPrefix=Version:
+LblUserPrefix=User:
+LblDatePrefix=Date:
+Label3=Support: office@tecomatic.rs
+Label2=Year: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Schedule Management
+cmdObrisiVreme=Delete
+cmdSacuvaj=Save
+cmdDodaj=Add
+cmdNazad=Back
+cmdNovi=Add schedule
+cmdObrisiRaspored=Delete schedule
+lblLen=Duration:
+LblDuzinaZvona=Duration:
+lblNazivZvona=Description:
+lblVreme=Time:
+ColDuzinaZvona=Duration
+SufixSec= sec
+MsgSvakodnevniSistemski=System schedule cannot be deleted!
+MsgRasporedUUpotrebi=Schedule is currently in use!
+MsgPotvrda1=Delete schedule
+MsgPotvrda2=Delete this time entry?
+MsgVremeNepravilno=Invalid time format!
+MsgUspesnoSacuvano=Saved!
+ColNaziv=Name
+ColVreme=Time
+
+[FrmVanNastavne]
+Caption=Extracurricular
+cmdObrisi=Delete
+cmdSacuvaj=Save
+cmdDodaj=Add
+cmdNazad=Back
+lblLen=Duration:
+LblDuzinaZvona=Duration:
+lblVreme=Time:
+lblOpisZvona=Description:
+lblDan=Day:
+ColDuzinaZvona=Duration
+SufixSec= sec
+ItemPonedeljak=Monday
+ItemUtorak=Tuesday
+ItemSreda=Wednesday
+ItemCetvrtak=Thursday
+ItemPetak=Friday
+ItemSubota=Saturday
+ItemNedelja=Sunday
+MsgPotvrda=Delete this time entry?
+MsgVremeNepravilno=Invalid time format!
+ColNaziv=Name
+ColVreme=Time
+ColDan=Day
+
+[FrmZastita]
+Caption=Change PIN
+cmdSacuvaj=Save
+lblTrenutniPin=Current PIN [4 digits]:
+lblNoviPin=New PIN:
+lblPonoviNoviPin=Confirm PIN:
+MsgNeispravanPin=Incorrect current PIN!
+MsgNistePotvrdili=New PIN not confirmed!
+MsgPinNijeIsti=PIN mismatch in confirmation!
+MsgNoviPinPostavljen=New PIN set!
+
+[MdlCommunication]
+MsgPortZatvoren=Port closed!
+
+[MdlStart]
+MsgVecPokrenut=Program already running!
+
+[CntrlSerial]
+MsgGreskaPorta=Error opening port:
+MsgPortOtvoren=Port opened!
+MsgPortZatvoren=Port closed!

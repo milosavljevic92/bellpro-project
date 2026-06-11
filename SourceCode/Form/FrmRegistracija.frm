@@ -219,6 +219,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
     Dim licenca As String
     TxtLicenca.Text = Kriptuj(GetSetting("Tecomatic", "BellPro", "002", ""), False)
@@ -254,12 +255,11 @@ If Not DebugMode = True Then On Error Resume Next
         SaveSetting "Tecomatic", "BellPro", "003", TxtImeskole.Text
         SaveSetting "Tecomatic", "BellPro", "004", format(Now, "dd.mm.yyyy")
         setFullMode
-        MsgBox "Program uspesno registrovan, hvala sto se odabrali BellPro!", vbInformation
+        MsgBox T("FrmRegistracija", "MsgUspesnoReg"), vbInformation
         FrmSplash.Show
         Unload Me
     Else
-        MsgBox "Licenca koju ste uneli nije ispravna, mozda ste je pogresno uneli istu." _
-        + vbNewLine + "Kontakt: office@tecomatic.rs", vbCritical
+        MsgBox T("FrmRegistracija", "MsgNeispravnaLicenca") & vbNewLine & T("FrmRegistracija", "MsgKontakt"), vbCritical
         TxtLicenca.Text = ""
         setDemoMode
         Exit Sub
@@ -273,7 +273,7 @@ If Not DebugMode = True Then On Error Resume Next
         licenca = MakeGroups(output, True, Val(10))
         GenLicencu = licenca
     Else
-        MsgBox "Nastala je greska pri registraciji programa, program æe se automatski zatvoriti. Pokusajte ponovo da ga registrujete."
+        MsgBox T("FrmRegistracija", "MsgGreskaPriReg")
         End
     End If
 End Function

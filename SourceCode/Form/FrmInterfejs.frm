@@ -6,13 +6,13 @@ Begin VB.Form FrmInterfejs
    ClientHeight    =   3510
    ClientLeft      =   -15
    ClientTop       =   255
-   ClientWidth     =   2520
+   ClientWidth     =   2970
    Icon            =   "FrmInterfejs.frx":0000
    LinkTopic       =   "Form3"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   3510
-   ScaleWidth      =   2520
+   ScaleWidth      =   2970
    StartUpPosition =   1  'CenterOwner
    Begin VB.TextBox txtCommPort 
       BeginProperty Font 
@@ -29,7 +29,7 @@ Begin VB.Form FrmInterfejs
       TabIndex        =   7
       Text            =   "COM1"
       Top             =   1080
-      Width           =   2055
+      Width           =   2535
    End
    Begin VB.CheckBox chDtrCtsEnabled 
       Appearance      =   0  'Flat
@@ -49,7 +49,7 @@ Begin VB.Form FrmInterfejs
       Left            =   120
       TabIndex        =   6
       Top             =   2160
-      Width           =   2295
+      Width           =   2775
    End
    Begin VB.CheckBox chInvertRTS 
       Appearance      =   0  'Flat
@@ -69,7 +69,7 @@ Begin VB.Form FrmInterfejs
       Left            =   120
       TabIndex        =   5
       Top             =   2400
-      Width           =   2415
+      Width           =   2775
    End
    Begin VB.ComboBox CmbInterface 
       BeginProperty Font 
@@ -86,7 +86,7 @@ Begin VB.Form FrmInterfejs
       Style           =   2  'Dropdown List
       TabIndex        =   1
       Top             =   480
-      Width           =   2055
+      Width           =   2535
    End
    Begin VB.Timer Trm 
       Enabled         =   0   'False
@@ -99,8 +99,8 @@ Begin VB.Form FrmInterfejs
       Left            =   120
       TabIndex        =   3
       Top             =   2760
-      Width           =   2295
-      _ExtentX        =   4048
+      Width           =   2775
+      _ExtentX        =   4895
       _ExtentY        =   1085
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Segoe UI"
@@ -120,8 +120,8 @@ Begin VB.Form FrmInterfejs
       Left            =   240
       TabIndex        =   4
       Top             =   1560
-      Width           =   2055
-      _ExtentX        =   3625
+      Width           =   2535
+      _ExtentX        =   4471
       _ExtentY        =   661
       Enabled         =   0   'False
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
@@ -141,7 +141,7 @@ Begin VB.Form FrmInterfejs
       Height          =   1935
       Left            =   120
       Top             =   120
-      Width           =   2295
+      Width           =   2775
    End
    Begin VB.Label lblBellInterfejs 
       BackColor       =   &H00E0E0E0&
@@ -189,6 +189,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Private Sub Form_Load()
+    ApplyLanguage Me
 On Error Resume Next
     GenerateInterfaceList
     txtCommPort.Text = GetProfile("config", "023", "COM1", getConfigPath)
@@ -204,9 +205,9 @@ Private Sub GenerateInterfaceList()
 If Not DebugMode = True Then On Error Resume Next
     With CmbInterface
         .Clear
-        .AddItem "BellCommDirect"
-        .AddItem "BellProRelay"
-        .AddItem "Bez interfejsa"
+        .AddItem t("FrmInterfejs", "ItemBellCommDirect")
+        .AddItem t("FrmInterfejs", "ItemBellProRelay")
+        .AddItem t("FrmInterfejs", "ItemBezInterfejsa")
         .ListIndex = 0
     End With
 End Sub
@@ -214,7 +215,7 @@ End Sub
 Private Sub CmdTest_Click()
 If Not DebugMode = True Then On Error Resume Next
     Dim poruka As Integer
-    poruka = MsgBox("Testiranjem interfejsa aktiviraæete relej na Interfejsu. Ukoliko je relej spojen sa sistememom zvona docice do oglašavanja zvona koje ce trajati 5 sec." & vbCrLf & "Da li zelite da odmah to uradite ?", vbQuestion & vbYesNo)
+    poruka = MsgBox(t("FrmInterfejs", "MsgTestInterfejsa"), vbQuestion & vbYesNo)
     If poruka = vbYes Then
         ClosePort
         OpenPort

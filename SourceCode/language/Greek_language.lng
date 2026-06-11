@@ -1,0 +1,220 @@
+; BellPro - Greek Language File (Latin transliteration)
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Orizontas arges
+
+[FrmExport]
+Caption=Eksagogi programmatos
+cmdIzvezi=Eksagogi
+LblRaspored=Programma:
+MsgRasporedPrazan=Keno programma, eksagogi adynati
+MsgUspesnoIzvezen=Eksagogi epithychia!
+ItemVannastavne=Eksoschilika
+
+[FrmInterfejs]
+Caption=BellPro Diepafi
+lblBellInterfejs=Diepafi:
+LblBrojPorta=Thyra:
+cmdTest=TEST
+cmdRefresh=Ananeosi
+chDtrCtsEnabled=Entovismos diepafis
+chInvertRTS=Antistrofi rele
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Choris diepafi
+MsgTestInterfejsa=To test tha energopoiisi to rele. Koydouni 5 deft an sindedemeno. Synecheia?
+
+[FrmMain]
+mnuRaspored=&Programma
+mnusvakodnevni=&Epeksergasia
+mnuvannastavne=&Eksoschilika
+MnuUvezi=&Eisagogi
+MnuIzvezi=&Eksagogi
+mnupodesavanja=&Rythmiseis
+mnupodprograma=&Efarmogi
+mnuraspusti=&Diakopes
+mnupraznici=&Arges
+mnuzastitap=&Asfalia
+mnuinterfejs=&Diepafi
+mnuprogramu=&Programma
+mnuruucno=&Cheirokinito
+mnuzastitaz=&Klidoma
+MnuOtkljucaj=Kseklidoma
+mnuupdate=&Enimerosi
+mnuAbout=Schetika...
+mnutray=&Kleisimo
+mnuRegistracija=&Eggafi
+mnuizlaz=&Eksodos
+ColDuzinaZvona=Diarkeia
+TipPortOtvoren=Thyra anoichti:
+TipGreskaPorta=Sfalma thyras!
+MsgBazaNijePostoji=Vasi dedomenon den vrethike! Epikoinonia me ypostiriki.
+MsgRasporedPrimenjen=Programma efarmostike
+MsgFajlNepravilan=M? egkyri morfi archeio!
+MsgUspesnoUvezen=Eisagogi epithychia!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Ora:
+StatusDatum=| Imerominia:
+StatusDanasJe=| Simera:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Deftera
+DanUtorak=Triti
+DanSreda=Tetarti
+DanCetvrtak=Pempti
+DanPetak=Paraskevi
+DanSubota=Savvato
+DanNedelja=Kyriaki
+ColNaziv=Onoma
+ColVreme=Ora
+MsgIzlaz=Kleisimo programmatos? To koydouni tha apenergopoiithei.
+CmbRaspored_Tip=Programmata vasis dedomenon
+ImgDissconn_Tip=Thyra anoichti, diepafi den vrethike
+ImgConnected_Tip=BellPro syndesmeno
+ImgZelena_Tip=Koydouni simera
+ImgCrvena_Tip=Oxi koydouni simera
+cmdPrimeni=Efarmogi
+MsgZvonoVreme=Koydouni stis:
+MsgZvonoOpis=Perigrafi:
+
+[FrmNoviRaspored]
+Caption=Neo programma
+lblNazivRasporeda=Onoma:
+MsgImePostoji=To onoma yparchi idi!
+
+[FrmOtkljucavanje]
+Caption=Eisagogi PIN
+cmdPrijavise=Syndesi
+MsgLozinkaNeisp=Lathos PIN!
+
+[FrmPodesavanje]
+Caption=Rythmiseis
+Frame2=Koydouni
+lblDuzinaZvona=Diarkeia:
+chZvonoPrekoRazglasa=Koydouni meso ycheiou
+chVannastavne=Eksoschilika
+chZastitaLozinkom=Prostasia kodikoy
+chStartWithWin=Ekkinisd me Windows
+chObavestiZvono=Eidopoiisi koydouniou
+chStartMin=Ekkinisd elachistopoiimeno
+chNeZvoni=Oxi koydouni
+chNeZvoniPraznici=Oxi kata arges
+chNeZvoniSubotom=Oxi Savvato
+chNeZvoniNedeljom=Oxi Kyriaki
+chNeZvoniRaspust=Oxi kata diakopes
+lblJezik=Glossa:
+SufixSec= deft
+MsgJezikPromenjen=Glossa allakse. Anoixte ksana ta parathyra.
+
+[FrmRaspusti]
+Caption=Orismos diakopon
+Label5=Diakopes 1
+Label6=Diakopes 2
+Label9=Diakopes 3
+Label12=Diakopes 4
+Label1=eos
+Label3=eos
+Label7=eos
+Label10=eos
+
+[FrmRegistracija]
+Caption= BellPro | Eggafi
+cmdDemo=DEMO
+cmdCopy=Antigrafi
+cmdRegistruj=Eggafi
+lblNazivUstanove=Idrima:
+LblParametar=Parametros:
+LblLicenca=Adeia:
+MsgUspesnoReg=Eggafi epithychia! Efcharistoyme gia tin epilogi BellPro!
+MsgNeispravnaLicenca=M? egkyri adeia. Elegxte kai dokimaste ksana.
+MsgKontakt=Epikoinonia: office@tecomatic.rs
+MsgGreskaPriReg=Sfalma eggafis. To programma kleinei. Dokimaste ksana.
+
+[FrmRucnoZ]
+Caption=Cheirokinito koydouni
+cmdRucnoZvoni=Xtypima
+CmdUpali=Xtypima
+CmdUgasi=Stamata
+ItemZvono=Koydouni
+ItemRazglas=Ycheio
+ItemZvonoRazglas=Koydouni + Ycheio
+
+[FrmSplash]
+lblDatumInstalacije=Eggegrammeno:
+Label1=BellPro - School version
+LblVersionPrefix=Ekdosi:
+LblUserPrefix=Chritis:
+LblDatePrefix=Imerominia:
+Label3=Ypostiriki: office@tecomatic.rs
+Label2=Etos: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Diacheirisi programmatos
+cmdObrisiVreme=Diagrafi
+cmdSacuvaj=Apothikeisi
+cmdDodaj=Prosthiki
+cmdNazad=Piso
+cmdNovi=Neo programma
+cmdObrisiRaspored=Diagrafi programmatos
+lblLen=Diarkeia:
+LblDuzinaZvona=Diarkeia:
+lblNazivZvona=Perigrafi:
+lblVreme=Ora:
+ColDuzinaZvona=Diarkeia
+SufixSec= deft
+MsgSvakodnevniSistemski=Programma sistimatos, diagrafi adynati!
+MsgRasporedUUpotrebi=To programma chisimopoieitai!
+MsgPotvrda1=Diagrafi programmatos
+MsgPotvrda2=Diagrafi aftis tis eggrafis?
+MsgVremeNepravilno=M? egkyri morfi oras!
+MsgUspesnoSacuvano=Apothikeytike!
+ColNaziv=Onoma
+ColVreme=Ora
+
+[FrmVanNastavne]
+Caption=Eksoschilika
+cmdObrisi=Diagrafi
+cmdSacuvaj=Apothikeisi
+cmdDodaj=Prosthiki
+cmdNazad=Piso
+lblLen=Diarkeia:
+LblDuzinaZvona=Diarkeia:
+lblVreme=Ora:
+lblOpisZvona=Perigrafi:
+lblDan=Imera:
+ColDuzinaZvona=Diarkeia
+SufixSec= deft
+ItemPonedeljak=Deftera
+ItemUtorak=Triti
+ItemSreda=Tetarti
+ItemCetvrtak=Pempti
+ItemPetak=Paraskevi
+ItemSubota=Savvato
+ItemNedelja=Kyriaki
+MsgPotvrda=Diagrafi aftis tis eggrafis?
+MsgVremeNepravilno=M? egkyri morfi oras!
+ColNaziv=Onoma
+ColVreme=Ora
+ColDan=Imera
+
+[FrmZastita]
+Caption=Allagi PIN
+cmdSacuvaj=Apothikeisi
+lblTrenutniPin=Trecho PIN [4]:
+lblNoviPin=Neo PIN:
+lblPonoviNoviPin=Epiveveosi PIN:
+MsgNeispravanPin=Lathos trecho PIN!
+MsgNistePotvrdili=Neo PIN den epiveveothike!
+MsgPinNijeIsti=PIN den taftizei!
+MsgNoviPinPostavljen=Neo PIN oristike!
+
+[MdlCommunication]
+MsgPortZatvoren=Thyra ekleise!
+
+[MdlStart]
+MsgVecPokrenut=To programma trechei idi!
+
+[CntrlSerial]
+MsgGreskaPorta=Sfalma anoigmatos thyras:
+MsgPortOtvoren=Thyra anoichthike!
+MsgPortZatvoren=Thyra ekleise!

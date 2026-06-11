@@ -1,0 +1,220 @@
+; BellPro - Hungarian Language File
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Ünnepek meghatározása
+
+[FrmExport]
+Caption=Órarend exportálása
+cmdIzvezi=Exportálás
+LblRaspored=Órarend:
+MsgRasporedPrazan=Az órarend üres, nem exportálható
+MsgUspesnoIzvezen=Exportálás sikeres!
+ItemVannastavne=Tanórán kívüli
+
+[FrmInterfejs]
+Caption=BellPro Csatoló
+lblBellInterfejs=Csatoló:
+LblBrojPorta=Port:
+cmdTest=TEST
+cmdRefresh=Frissítés
+chDtrCtsEnabled=Csatoló érzékelése
+chInvertRTS=Relé megfordítása
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Nincs csatoló
+MsgTestInterfejsa=A teszt aktiválja a relét. A csengõ 5 mp-ig szól ha csatlakoztatva. Folytatja?
+
+[FrmMain]
+mnuRaspored=&Órarend
+mnusvakodnevni=&Szerkesztés
+mnuvannastavne=&Tanórán kívüli
+MnuUvezi=&Importálás
+MnuIzvezi=&Exportálás
+mnupodesavanja=&Beállítások
+mnupodprograma=&Alkalmazás
+mnuraspusti=&Szünet
+mnupraznici=&Ünnepek
+mnuzastitap=&Biztonság
+mnuinterfejs=&Csatoló
+mnuprogramu=&Program
+mnuruucno=&Kézi
+mnuzastitaz=&Zárolás
+MnuOtkljucaj=Feloldás
+mnuupdate=&Frissítés
+mnuAbout=Névjegy...
+mnutray=&Ablak bezárása
+mnuRegistracija=&Regisztráció
+mnuizlaz=&Kilépés
+ColDuzinaZvona=Idõtartam
+TipPortOtvoren=Port nyitva:
+TipGreskaPorta=Port megnyitási hiba!
+MsgBazaNijePostoji=Az adatbázis nem található! Lépjen kapcsolatba a támogatással.
+MsgRasporedPrimenjen=Órarend alkalmazva
+MsgFajlNepravilan=Érvénytelen fájlformátum!
+MsgUspesnoUvezen=Importálás sikeres!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Idõ:
+StatusDatum=| Dátum:
+StatusDanasJe=| Ma:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Hétfõ
+DanUtorak=Kedd
+DanSreda=Szerda
+DanCetvrtak=Csütörtök
+DanPetak=Péntek
+DanSubota=Szombat
+DanNedelja=Vasárnap
+ColNaziv=Megnevezés
+ColVreme=Idõ
+MsgIzlaz=Bezárja a programot? A csengõ leáll.
+CmbRaspored_Tip=Adatbázisban lévõ órarendek
+ImgDissconn_Tip=Port nyitva, csatoló nem található
+ImgConnected_Tip=BellPro csatlakoztatva
+ImgZelena_Tip=Ma szól a csengõ
+ImgCrvena_Tip=Ma nem szól a csengõ
+cmdPrimeni=Alkalmaz
+MsgZvonoVreme=Csengõ:
+MsgZvonoOpis=Leírás:
+
+[FrmNoviRaspored]
+Caption=Új órarend
+lblNazivRasporeda=Órarend neve:
+MsgImePostoji=Az órarend neve már létezik!
+
+[FrmOtkljucavanje]
+Caption=PIN megadása
+cmdPrijavise=Bejelentkezés
+MsgLozinkaNeisp=Helytelen PIN!
+
+[FrmPodesavanje]
+Caption=Beállítások
+Frame2=Csengõ
+lblDuzinaZvona=Csengõ idõtartama:
+chZvonoPrekoRazglasa=Csengõ hangszórón át
+chVannastavne=Tanórán kívüli
+chZastitaLozinkom=Jelszavas védelem
+chStartWithWin=Indítás Windowssal
+chObavestiZvono=Értesítés csengetéskor
+chStartMin=Minimalizálva indul
+chNeZvoni=Ne csengetjen
+chNeZvoniPraznici=Ne csengetjen ünnepeken
+chNeZvoniSubotom=Ne csengetjen szombaton
+chNeZvoniNedeljom=Ne csengetjen vasárnap
+chNeZvoniRaspust=Ne csengetjen szünetben
+lblJezik=Nyelv:
+SufixSec= mp
+MsgJezikPromenjen=Nyelv megváltoztatva. Nyissa újra az ablakokat.
+
+[FrmRaspusti]
+Caption=Szünetek beállítása
+Label5=1. szünet
+Label6=2. szünet
+Label9=3. szünet
+Label12=4. szünet
+Label1=tól
+Label3=tól
+Label7=tól
+Label10=tól
+
+[FrmRegistracija]
+Caption= BellPro | Regisztráció
+cmdDemo=DEMO
+cmdCopy=Másolás
+cmdRegistruj=Regisztrálás
+lblNazivUstanove=Intézmény:
+LblParametar=Paraméter:
+LblLicenca=Licenc:
+MsgUspesnoReg=Sikeres regisztráció! Köszönjük, hogy a BellPro-t választotta!
+MsgNeispravnaLicenca=Érvénytelen licenc. Ellenõrizze és próbálja újra.
+MsgKontakt=Kapcsolat: office@tecomatic.rs
+MsgGreskaPriReg=Regisztrációs hiba. A program bezárul. Próbálja újra.
+
+[FrmRucnoZ]
+Caption=Kézi csengetés
+cmdRucnoZvoni=Csengõ be
+CmdUpali=Csengõ be
+CmdUgasi=Csengõ ki
+ItemZvono=Csengõ
+ItemRazglas=Hangszóró
+ItemZvonoRazglas=Csengõ + Hangszóró
+
+[FrmSplash]
+lblDatumInstalacije=Regisztrálva:
+Label1=BellPro - School version
+LblVersionPrefix=Verzió:
+LblUserPrefix=Felhasználó:
+LblDatePrefix=Dátum:
+Label3=Támogatás: office@tecomatic.rs
+Label2=Év: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Órarend kezelése
+cmdObrisiVreme=Törlés
+cmdSacuvaj=Mentés
+cmdDodaj=Hozzáadás
+cmdNazad=Vissza
+cmdNovi=Órarend hozzáadása
+cmdObrisiRaspored=Órarend törlése
+lblLen=Idõtartam:
+LblDuzinaZvona=Idõtartam:
+lblNazivZvona=Leírás:
+lblVreme=Idõ:
+ColDuzinaZvona=Idõtartam
+SufixSec= mp
+MsgSvakodnevniSistemski=Rendszer órarend nem törölhetõ!
+MsgRasporedUUpotrebi=Az órarend használatban van!
+MsgPotvrda1=Órarend törlése
+MsgPotvrda2=Törli ezt a bejegyzést?
+MsgVremeNepravilno=Érvénytelen idõformátum!
+MsgUspesnoSacuvano=Mentve!
+ColNaziv=Megnevezés
+ColVreme=Idõ
+
+[FrmVanNastavne]
+Caption=Tanórán kívüli
+cmdObrisi=Törlés
+cmdSacuvaj=Mentés
+cmdDodaj=Hozzáadás
+cmdNazad=Vissza
+lblLen=Idõtartam:
+LblDuzinaZvona=Idõtartam:
+lblVreme=Idõ:
+lblOpisZvona=Leírás:
+lblDan=Nap:
+ColDuzinaZvona=Idõtartam
+SufixSec= mp
+ItemPonedeljak=Hétfõ
+ItemUtorak=Kedd
+ItemSreda=Szerda
+ItemCetvrtak=Csütörtök
+ItemPetak=Péntek
+ItemSubota=Szombat
+ItemNedelja=Vasárnap
+MsgPotvrda=Törli ezt a bejegyzést?
+MsgVremeNepravilno=Érvénytelen idõformátum!
+ColNaziv=Megnevezés
+ColVreme=Idõ
+ColDan=Nap
+
+[FrmZastita]
+Caption=PIN módosítása
+cmdSacuvaj=Mentés
+lblTrenutniPin=Jelenlegi PIN [4]:
+lblNoviPin=Új PIN:
+lblPonoviNoviPin=PIN megerõsítése:
+MsgNeispravanPin=Helytelen jelenlegi PIN!
+MsgNistePotvrdili=Az új PIN nincs megerõsítve!
+MsgPinNijeIsti=A PIN nem egyezik!
+MsgNoviPinPostavljen=Új PIN beállítva!
+
+[MdlCommunication]
+MsgPortZatvoren=Port bezárva!
+
+[MdlStart]
+MsgVecPokrenut=A program már fut!
+
+[CntrlSerial]
+MsgGreskaPorta=Port megnyitási hiba:
+MsgPortOtvoren=Port megnyitva!
+MsgPortZatvoren=Port bezárva!

@@ -75,12 +75,16 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Private Sub Form_Load()
+    ApplyLanguage Me
+End Sub
+
 Private Sub CmdNapravi_Click()
 If Not DebugMode = True Then On Error Resume Next
     Dim rez As Boolean
     rez = FrmSvakodnevni.KreirajNoviRaspored(TxtNaziv.Text)
     If rez = False Then
-        MsgBox "Ime rasporeda vec postoji u bazi!", vbCritical
+        MsgBox T("FrmNoviRaspored", "MsgImePostoji"), vbCritical
         Exit Sub
     Else
         FrmSvakodnevni.Show

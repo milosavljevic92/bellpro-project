@@ -3,13 +3,13 @@ Option Explicit
 Public Sub Main()
 On Error Resume Next
     If App.PrevInstance = True Then
-        MsgBox "Program je veæ pokrenut!", vbExclamation
+        MsgBox T("MdlStart", "MsgVecPokrenut"), vbExclamation
         End
     End If
     GenerateIniFileIfNotExist
     setDebugMode False 'debug mod
     If GetProfile("config", "037", "0", getConfigPath) = "1" Then initPlayer
-    'setLang
+    Call InitLanguage(GetSavedLang())  ' Reads saved language from config, default "Serbian"
     FrmRegistracija.Show
     Exit Sub
 End Sub

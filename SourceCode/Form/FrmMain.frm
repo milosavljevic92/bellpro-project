@@ -96,8 +96,8 @@ Begin VB.Form FrmMain
       TabIndex        =   4
       Top             =   240
       Width           =   615
-      _extentx        =   1085
-      _extenty        =   1085
+      _ExtentX        =   1085
+      _ExtentY        =   1085
    End
    Begin VB.Timer trmTime 
       Interval        =   10
@@ -166,12 +166,20 @@ Begin VB.Form FrmMain
       TabIndex        =   3
       Top             =   120
       Width           =   1695
-      _extentx        =   2990
-      _extenty        =   661
-      font            =   "FrmMain.frx":802D
-      caption         =   "Primeni"
-      forecolor       =   -2147483642
-      forehover       =   0
+      _ExtentX        =   2990
+      _ExtentY        =   661
+      BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+         Name            =   "Segoe UI"
+         Size            =   9.75
+         Charset         =   0
+         Weight          =   700
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Caption         =   "Primeni"
+      ForeColor       =   -2147483642
+      ForeHover       =   0
    End
    Begin VB.Label lblStatus 
       Alignment       =   2  'Center
@@ -195,7 +203,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgDissconn 
       Height          =   375
       Left            =   4320
-      Picture         =   "FrmMain.frx":8055
+      Picture         =   "FrmMain.frx":802D
       Stretch         =   -1  'True
       ToolTipText     =   "Port je otvoren, ali interfejs nije pronadjen"
       Top             =   120
@@ -205,7 +213,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgConnected 
       Height          =   375
       Left            =   4320
-      Picture         =   "FrmMain.frx":B073
+      Picture         =   "FrmMain.frx":B04B
       Stretch         =   -1  'True
       ToolTipText     =   "Interfejs BellFace je konektovan"
       Top             =   120
@@ -215,7 +223,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgZelena 
       Height          =   375
       Left            =   4920
-      Picture         =   "FrmMain.frx":EB21
+      Picture         =   "FrmMain.frx":EAF9
       Stretch         =   -1  'True
       ToolTipText     =   "Danas zvoni "
       Top             =   120
@@ -225,7 +233,7 @@ Begin VB.Form FrmMain
    Begin VB.Image ImgCrvena 
       Height          =   375
       Left            =   4920
-      Picture         =   "FrmMain.frx":F37B
+      Picture         =   "FrmMain.frx":F353
       Stretch         =   -1  'True
       ToolTipText     =   "Danas ne zvoni"
       Top             =   120
@@ -317,17 +325,18 @@ Private raspored As ADODB.Recordset, tabela As ADODB.Recordset, uvoz As ADODB.Re
 Public vreme As String, datum As String
 Private DanasZvoni As Boolean, DanasJeDan As String
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     Dim boolTemp As Boolean
     Dim demoString As String
     Set Konekcija = New ADODB.Connection
-    boolTemp = checkDoesDBexist(App.Path & "\base.sqlite")
+    boolTemp = checkDoesDBexist(App.Path & "\BellPro.sqlite")
     If boolTemp = False Then
-        MsgBox "Baza podataka ne postoji!" & vbNewLine & "Pozovite tehnicku podrsku kako bih resili ovaj problem.", vbCritical
+        MsgBox t("FrmMain", "MsgBazaNijePostoji"), vbCritical
         End
     End If
     Konekcija.CursorLocation = adUseClient
-    Konekcija.Open "Driver={SQLite3 ODBC Driver};Database=" & App.Path & "\base.sqlite;" & ";"
+    Konekcija.Open "Driver={SQLite3 ODBC Driver};Database=" & App.Path & "\BellPro.sqlite;" & ";"
     
     With IconData
         .cbSize = Len(IconData)
@@ -349,7 +358,7 @@ If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
         Call OpenPort
     End If
    
-    Me.Caption = "BellPro - School Edition - V" & App.Major & "." & App.Minor & "." & App.Revision & " " & demoString
+    Me.Caption = t("FrmMain", "CaptionApp") & App.Major & "." & App.Minor & "." & App.Revision & " " & demoString
     If GetProfile("config", "029", "1", getConfigPath) = 1 Then
         Me.WindowState = 1
     Else
@@ -375,7 +384,7 @@ Private Sub CmdPrimeni_Click()
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     WriteProfile "config", "021", CmbRaspored.Text, getConfigPath
     Call PostaviGridMain(GetProfile("config", "021", "", getConfigPath))
-    MsgBox "Raspored je primenjen", vbInformation
+    MsgBox t("FrmMain", "MsgRasporedPrimenjen"), vbInformation
 End Sub
 Private Sub ImgCrvena_Click()
     FrmPodesavanje.Show
@@ -397,7 +406,7 @@ End Sub
 Private Sub mnuizlaz_Click()
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     Dim izlaz As String
-    izlaz = MsgBox("Da li ste sigurni da zelite zatvoriti program?" + vbNewLine + "Ukoliko ga zatvorite zvono se nece oglasavati.", vbQuestion & vbYesNo)
+    izlaz = MsgBox(t("FrmMain", "MsgIzlaz"), vbQuestion & vbYesNo)
     If izlaz = vbYes Then
         ClosePort
         Shell_NotifyIcon NIM_DELETE, IconData
@@ -467,19 +476,28 @@ End Sub
 Private Sub mnuzastitaz_Click()
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
     Select Case mnuzastitaz.Caption
-    Case "Otkljucaj"
+    Case t("FrmMain", "MnuOtkljucaj")
         FrmOtkljucavanje.Show
-    Case "Zakljucaj"
-        mnuzastitaz.Caption = "Otkljucaj"
+    Case t("FrmMain", "mnuzastitaz")
+        mnuzastitaz.Caption = t("FrmMain", "MnuOtkljucaj")
         lockApp False
     End Select
 End Sub
 Private Sub mnuShow_Click()
-If Not DebugMode = True Then On Error Resume Next
-    FrmMain.WindowState = 0
+    If Not DebugMode = True Then On Error Resume Next
+
+    FrmMain.WindowState = vbNormal
     FrmMain.Show
+    DoEvents
+
+    CenterForm FrmMain
+
     Shell_NotifyIcon NIM_DELETE, IconData
     App.TaskVisible = True
+End Sub
+Public Sub CenterForm(frm As Form)
+    frm.Left = (Screen.Width - frm.Width) \ 2
+    frm.Top = (Screen.Height - frm.Height) \ 2
 End Sub
 Private Sub MnuUvezi_Click()
 If Not DebugMode = True Then If Not DebugMode = True Then On Error Resume Next
@@ -543,7 +561,7 @@ Private Sub UpaliZvono(VremeZvona As String, NazivZvona As String, DuzinaZvona A
 If Not DebugMode = True Then On Error Resume Next
 If DanasZvoni = True Then
     If GetProfile("config", "027", "1", getConfigPath) = 1 Then
-        PrikaziPoruku "Zvono za vreme: " & VremeZvona & vbNewLine & "Opis: " & NazivZvona, DuzinaZvona
+        PrikaziPoruku t("FrmMain", "MsgZvonoVreme") & " " & VremeZvona & vbNewLine & t("FrmMain", "MsgZvonoOpis") & " " & NazivZvona, DuzinaZvona
     End If
     HitTheRelay (True)
     If GetProfile("config", "037", "0", getConfigPath) = 1 Then PlayMp3Sound
@@ -571,20 +589,21 @@ Private Sub trmStatus_Timer()
 End Sub
 Private Sub PostaviStatusBar()
 If Not DebugMode = True Then On Error Resume Next
-    If Weekday(Date) = 1 Then DanasJeDan = "Nedelja"
-    If Weekday(Date) = 2 Then DanasJeDan = "Ponedeljak"
-    If Weekday(Date) = 3 Then DanasJeDan = "Utorak"
-    If Weekday(Date) = 4 Then DanasJeDan = "Sreda"
-    If Weekday(Date) = 5 Then DanasJeDan = "Cetvrtak"
-    If Weekday(Date) = 6 Then DanasJeDan = "Petak"
-    If Weekday(Date) = 7 Then DanasJeDan = "Subota"
-    If Weekday(Date) = 1 Then DanasJeDan = "Nedelja"
-    lblStatus.Caption = " Vreme: " + vreme + " | Datum: " + datum + " | Danas je: " + DanasJeDan + " | Tecomatic.rs"
+    Select Case Weekday(Date)
+        Case 1: DanasJeDan = t("FrmMain", "DanNedelja")
+        Case 2: DanasJeDan = t("FrmMain", "DanPonedeljak")
+        Case 3: DanasJeDan = t("FrmMain", "DanUtorak")
+        Case 4: DanasJeDan = t("FrmMain", "DanSreda")
+        Case 5: DanasJeDan = t("FrmMain", "DanCetvrtak")
+        Case 6: DanasJeDan = t("FrmMain", "DanPetak")
+        Case 7: DanasJeDan = t("FrmMain", "DanSubota")
+    End Select
+    lblStatus.Caption = t("FrmMain", "StatusVreme") + " " + vreme + " " + t("FrmMain", "StatusDatum") + " " + datum + " " + t("FrmMain", "StatusDanasJe") + " " + DanasJeDan + " " + t("FrmMain", "StatusTecomatic")
 End Sub
 Public Sub lockApp(unlocked As Boolean)
 If Not DebugMode = True Then On Error Resume Next
-    If unlocked = True Then mnuzastitaz.Caption = "Zakljucaj"
-    If unlocked = False Then mnuzastitaz.Caption = "Otkljucaj"
+    If unlocked = True Then mnuzastitaz.Caption = t("FrmMain", "MnuZakljucaj")
+    If unlocked = False Then mnuzastitaz.Caption = t("FrmMain", "MnuOtkljucaj")
     mnuRaspored.Enabled = unlocked
     mnupodesavanja.Enabled = unlocked
     mnuinterfejs.Enabled = unlocked
@@ -614,8 +633,10 @@ If Not DebugMode = True Then On Error Resume Next
     Grid.Columns.Remove ("Raspored")
     Grid.Columns.Remove ("Dan")
     Grid.Columns("Naziv").Width = 170
+    Grid.Columns("Naziv").Caption = t("FrmMain", "ColNaziv")
     Grid.Columns("Vreme").Width = 60
-    Grid.Columns(2).Caption = "Duzina Zvona"
+    Grid.Columns("Vreme").Caption = t("FrmMain", "ColVreme")
+    Grid.Columns(2).Caption = t("FrmMain", "ColDuzinaZvona")
     Grid.Columns(2).Width = 80
     Grid.Columns(2).Alignment = dbgCenter
     If tabela.EOF = True Then
@@ -645,7 +666,7 @@ If Not DebugMode = True Then On Error Resume Next
     i = 0
     Line Input #1, Str
     If Str <> "<Export>" Then
-        MsgBox "Fajl je nepravilno formatiran!", vbCritical
+        MsgBox t("FrmMain", "MsgFajlNepravilan"), vbCritical
         Close #1
         Exit Sub
     End If
@@ -666,7 +687,7 @@ If Not DebugMode = True Then On Error Resume Next
             Call PostaviCombo
         End If
         CmbRaspored.Text = GetProfile("config", "021", "", getConfigPath)
-        MsgBox "Raspored " & NazivRasporeda & " uspesno je uvezen u program!", vbInformation
+        MsgBox t("FrmMain", "MsgUspesnoUvezen"), vbInformation
         Exit Sub
     End If
     Poc = InStr(1, Str, "'")
@@ -708,3 +729,11 @@ On Error Resume Next
     End If
 End Sub
 
+Public Sub RefreshLanguage()
+If Not DebugMode = True Then On Error Resume Next
+    ApplyLanguage Me
+    Me.Caption = t("FrmMain", "CaptionApp") & App.Major & "." & App.Minor & "." & App.Revision
+    Call PostaviStatusBar
+    Call PostaviGridMain(GetProfile("config", "021", "", getConfigPath))
+    Call PostaviZastitu
+End Sub

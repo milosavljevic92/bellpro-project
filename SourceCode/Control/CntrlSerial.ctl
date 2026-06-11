@@ -35,7 +35,7 @@ If Not DebugMode = True Then On Error Resume Next
         Dim portNumberInt As Integer
         portNumberInt = Mid(portNumber, 4, 2)
         If IsCommExist(portNumberInt) = False Then
-            PrikaziPoruku "Greska sa otvaranjem porta: " & PortBroj, "5"
+            PrikaziPoruku T("CntrlSerial", "MsgGreskaPorta") & " " & PortBroj, "5"
             OpenPort = False
             Exit Function
         Else
@@ -59,7 +59,7 @@ If Not DebugMode = True Then On Error Resume Next
             End If
             
             If COM.PortOpen = True Then
-                PrikaziPoruku "Port: " & portNumber & " je otvoren!", "5"
+                PrikaziPoruku "Port: " & portNumber & " " & T("CntrlSerial", "MsgPortOtvoren"), "5"
                 OpenPort = True
                 Exit Function
             End If
@@ -73,7 +73,7 @@ If Not DebugMode = True Then On Error Resume Next
         COM.RTSEnable = False
     End If
     If COM.PortOpen = True Then COM.PortOpen = False
-    PrikaziPoruku "Port zatvoren! " & PortBroj, "5"
+    PrikaziPoruku T("CntrlSerial", "MsgPortZatvoren") & " " & PortBroj, "5"
 End Function
 Public Function CheckInterface() As Boolean
 If Not DebugMode = True Then On Error Resume Next

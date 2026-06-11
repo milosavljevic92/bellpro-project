@@ -80,13 +80,14 @@ If TxtLozinka.Text = lozinka Then
     FrmMain.Show
     Unload Me
 Else
-    MsgBox "Lozinka nije ispravana!", vbCritical
+    MsgBox T("FrmOtkljucavanje", "MsgLozinkaNeisp"), vbCritical
     TxtLozinka.Text = ""
     TxtLozinka.TabIndex = 0
 End If
 TrmEnter.Enabled = True
 End Sub
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
 TxtLozinka.TabIndex = 0
 End Sub

@@ -1,0 +1,220 @@
+; BellPro - German Language File
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Feiertage definieren
+
+[FrmExport]
+Caption=Stundenplan exportieren
+cmdIzvezi=Exportieren
+LblRaspored=Stundenplan:
+MsgRasporedPrazan=Stundenplan leer, Export nicht moeglich
+MsgUspesnoIzvezen=Export erfolgreich!
+ItemVannastavne=Ausserunterrichtlich
+
+[FrmInterfejs]
+Caption=BellPro Schnittstelle
+lblBellInterfejs=Schnittstelle:
+LblBrojPorta=Port:
+cmdTest=TEST
+cmdRefresh=Aktualisieren
+chDtrCtsEnabled=Schnittstellenerkennung
+chInvertRTS=Relais umkehren
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Keine Schnittstelle
+MsgTestInterfejsa=Test aktiviert das Relais. Klingel lautet 5 Sek. wenn verbunden. Fortfahren?
+
+[FrmMain]
+mnuRaspored=&Stundenplan
+mnusvakodnevni=&Bearbeiten
+mnuvannastavne=&Ausserunterrichtlich
+MnuUvezi=&Importieren
+MnuIzvezi=&Exportieren
+mnupodesavanja=&Einstellungen
+mnupodprograma=&Anwendung
+mnuraspusti=&Ferien
+mnupraznici=&Feiertage
+mnuzastitap=&Sicherheit
+mnuinterfejs=&Schnittstelle
+mnuprogramu=&Programm
+mnuruucno=&Manuell
+mnuzastitaz=&Sperren
+MnuOtkljucaj=Entsperren
+mnuupdate=&Update
+mnuAbout=Info...
+mnutray=&Schliessen
+mnuRegistracija=&Registrierung
+mnuizlaz=&Beenden
+ColDuzinaZvona=Dauer
+TipPortOtvoren=Port geoffnet:
+TipGreskaPorta=Fehler beim Oeffnen!
+MsgBazaNijePostoji=Datenbank nicht gefunden! Support kontaktieren.
+MsgRasporedPrimenjen=Stundenplan angewendet
+MsgFajlNepravilan=Ungultiges Dateiformat!
+MsgUspesnoUvezen=Import erfolgreich!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Zeit:
+StatusDatum=| Datum:
+StatusDanasJe=| Heute:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Montag
+DanUtorak=Dienstag
+DanSreda=Mittwoch
+DanCetvrtak=Donnerstag
+DanPetak=Freitag
+DanSubota=Samstag
+DanNedelja=Sonntag
+ColNaziv=Bezeichnung
+ColVreme=Zeit
+MsgIzlaz=Programm schliessen? Klingel wird deaktiviert.
+CmbRaspored_Tip=Stundenplaene aus Datenbank
+ImgDissconn_Tip=Port offen, Schnittstelle fehlt
+ImgConnected_Tip=BellPro verbunden
+ImgZelena_Tip=Klingel aktiv heute
+ImgCrvena_Tip=Keine Klingel heute
+cmdPrimeni=Anwenden
+MsgZvonoVreme=Klingel um:
+MsgZvonoOpis=Beschreibung:
+
+[FrmNoviRaspored]
+Caption=Neuer Stundenplan
+lblNazivRasporeda=Name:
+MsgImePostoji=Name bereits vorhanden!
+
+[FrmOtkljucavanje]
+Caption=PIN eingeben
+cmdPrijavise=Anmelden
+MsgLozinkaNeisp=Falscher PIN!
+
+[FrmPodesavanje]
+Caption=Einstellungen
+Frame2=Klingel
+lblDuzinaZvona=Klingeldauer:
+chZvonoPrekoRazglasa=Klingel via Lautsprecher
+chVannastavne=Ausserunterrichtlich
+chZastitaLozinkom=Passwortschutz
+chStartWithWin=Mit Windows starten
+chObavestiZvono=Benachrichtigung
+chStartMin=Minimiert starten
+chNeZvoni=Nicht klingeln
+chNeZvoniPraznici=Nicht an Feiertagen
+chNeZvoniSubotom=Nicht samstags
+chNeZvoniNedeljom=Nicht sonntags
+chNeZvoniRaspust=Nicht in Ferien
+lblJezik=Sprache:
+SufixSec= Sek
+MsgJezikPromenjen=Sprache geandert. Fenster neu oeffnen.
+
+[FrmRaspusti]
+Caption=Ferien festlegen
+Label5=Ferien 1
+Label6=Ferien 2
+Label9=Ferien 3
+Label12=Ferien 4
+Label1=bis
+Label3=bis
+Label7=bis
+Label10=bis
+
+[FrmRegistracija]
+Caption= BellPro | Registrierung
+cmdDemo=DEMO
+cmdCopy=Kopieren
+cmdRegistruj=Registrieren
+lblNazivUstanove=Einrichtung:
+LblParametar=Parameter:
+LblLicenca=Lizenz:
+MsgUspesnoReg=Registrierung erfolgreich! Danke fur BellPro!
+MsgNeispravnaLicenca=Ungultige Lizenz. Bitte erneut prufen.
+MsgKontakt=Kontakt: office@tecomatic.rs
+MsgGreskaPriReg=Registrierungsfehler. Programm schliesst. Erneut versuchen.
+
+[FrmRucnoZ]
+Caption=Manuelle Klingel
+cmdRucnoZvoni=Klingel ein
+CmdUpali=Klingel ein
+CmdUgasi=Klingel aus
+ItemZvono=Klingel
+ItemRazglas=Lautsprecher
+ItemZvonoRazglas=Klingel + LS
+
+[FrmSplash]
+lblDatumInstalacije=Registriert:
+Label1=BellPro - School version
+LblVersionPrefix=Version:
+LblUserPrefix=Benutzer:
+LblDatePrefix=Datum:
+Label3=Support: office@tecomatic.rs
+Label2=Jahr: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Stundenplaene
+cmdObrisiVreme=Loeschen
+cmdSacuvaj=Speichern
+cmdDodaj=Hinzufuegen
+cmdNazad=Zurueck
+cmdNovi=Plan hinzufuegen
+cmdObrisiRaspored=Plan loeschen
+lblLen=Dauer:
+LblDuzinaZvona=Dauer:
+lblNazivZvona=Beschreibung:
+lblVreme=Zeit:
+ColDuzinaZvona=Dauer
+SufixSec= Sek
+MsgSvakodnevniSistemski=Systemplan kann nicht geloescht werden!
+MsgRasporedUUpotrebi=Stundenplan wird verwendet!
+MsgPotvrda1=Plan loeschen
+MsgPotvrda2=Zeiteintrag loeschen?
+MsgVremeNepravilno=Ungultiges Zeitformat!
+MsgUspesnoSacuvano=Gespeichert!
+ColNaziv=Bezeichnung
+ColVreme=Zeit
+
+[FrmVanNastavne]
+Caption=Ausserunterrichtlich
+cmdObrisi=Loeschen
+cmdSacuvaj=Speichern
+cmdDodaj=Hinzufuegen
+cmdNazad=Zurueck
+lblLen=Dauer:
+LblDuzinaZvona=Dauer:
+lblVreme=Zeit:
+lblOpisZvona=Beschreibung:
+lblDan=Tag:
+ColDuzinaZvona=Dauer
+SufixSec= Sek
+ItemPonedeljak=Montag
+ItemUtorak=Dienstag
+ItemSreda=Mittwoch
+ItemCetvrtak=Donnerstag
+ItemPetak=Freitag
+ItemSubota=Samstag
+ItemNedelja=Sonntag
+MsgPotvrda=Zeiteintrag loeschen?
+MsgVremeNepravilno=Ungultiges Zeitformat!
+ColNaziv=Bezeichnung
+ColVreme=Zeit
+ColDan=Tag
+
+[FrmZastita]
+Caption=PIN aendern
+cmdSacuvaj=Speichern
+lblTrenutniPin=Aktueller PIN [4]:
+lblNoviPin=Neuer PIN:
+lblPonoviNoviPin=PIN bestaetigen:
+MsgNeispravanPin=Falscher PIN!
+MsgNistePotvrdili=PIN nicht bestaetigt!
+MsgPinNijeIsti=PIN stimmt nicht ueberein!
+MsgNoviPinPostavljen=Neuer PIN gesetzt!
+
+[MdlCommunication]
+MsgPortZatvoren=Port geschlossen!
+
+[MdlStart]
+MsgVecPokrenut=Programm laeuft bereits!
+
+[CntrlSerial]
+MsgGreskaPorta=Fehler Port oeffnen:
+MsgPortOtvoren=Port geoffnet!
+MsgPortZatvoren=Port geschlossen!

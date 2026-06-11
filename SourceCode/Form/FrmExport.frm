@@ -103,7 +103,7 @@ If Not DebugMode = True Then On Error Resume Next
     If lReturn = 0 Then
         Exit Sub
     Else
-        If CmbRaspored.Text = "Vannastavne aktivnosti" Then
+        If CmbRaspored.Text = T("FrmExport", "ItemVannastavne") Then
                 GenerisiXML Trim(SaveFile.lpstrFile) & ".xml", "SELECT * FROM raspored WHERE Raspored='VanNastavni'"
             Else
                 GenerisiXML Trim(SaveFile.lpstrFile) & ".xml", "SELECT * FROM raspored WHERE Raspored='" & CmbRaspored.Text & "'"
@@ -111,6 +111,7 @@ If Not DebugMode = True Then On Error Resume Next
     End If
 End Sub
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
     Call PostaviComboExport
 End Sub
@@ -120,13 +121,13 @@ If Not DebugMode = True Then On Error Resume Next
     CmbRaspored.Clear
     Set raspored = New ADODB.Recordset
     raspored.Open "SELECT DISTINCT Naziv FROM NaziviRasporeda", FrmMain.Konekcija, adOpenStatic, adLockOptimistic, adCmdText
-    CmbRaspored.AddItem "Vannastavne aktivnosti"
+    CmbRaspored.AddItem T("FrmExport", "ItemVannastavne")
     For x = 1 To raspored.RecordCount
        CmbRaspored.AddItem raspored.Fields("Naziv").value
        raspored.MoveNext
     Next x
     raspored.Close
-    CmbRaspored.Text = "Vannastavne aktivnosti"
+    CmbRaspored.Text = T("FrmExport", "ItemVannastavne")
 End Sub
 Private Sub GenerisiXML(ImeFajla As String, sqlString As String)
 If Not DebugMode = True Then On Error Resume Next
@@ -137,7 +138,7 @@ If Not DebugMode = True Then On Error Resume Next
             .Open sqlString, FrmMain.Konekcija, adOpenStatic, adLockOptimistic, adCmdText
             If .RecordCount = 0 Then
                 .Close
-                MsgBox "Raspored je prazan i ne moze biti izvezen", vbCritical
+                MsgBox T("FrmExport", "MsgRasporedPrazan"), vbCritical
                 Exit Sub
             End If
             Open ImeFajla For Output As #1
@@ -168,7 +169,7 @@ If Not DebugMode = True Then On Error Resume Next
             End If
             .Close
     End With
-           MsgBox "Uspesno izvezen raspored!", vbInformation
+           MsgBox T("FrmExport", "MsgUspesnoIzvezen"), vbInformation
 End Sub
 Private Sub Form_Unload(Cancel As Integer)
 If Not DebugMode = True Then On Error Resume Next

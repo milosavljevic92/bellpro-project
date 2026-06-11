@@ -82,7 +82,7 @@ Begin VB.Form FrmSplash
       Top             =   120
       Width           =   5655
    End
-   Begin VB.Image Image1 
+   Begin VB.Image ImageLogo 
       Appearance      =   0  'Flat
       BorderStyle     =   1  'Fixed Single
       Height          =   1215
@@ -177,12 +177,19 @@ Attribute VB_Exposed = False
 Option Explicit
 Dim xx As Single
 Dim yy As Single
+Private Declare Function ShellExecute Lib "shell32.dll" Alias "ShellExecuteA" ( _
+    ByVal hwnd As Long, _
+    ByVal lpOperation As String, _
+    ByVal lpFile As String, _
+    ByVal lpParameters As String, _
+    ByVal lpDirectory As String, _
+    ByVal nShowCmd As Long) As Long
 Private Sub Form_Load()
 If Not DebugMode = False Then On Error Resume Next
     Me.Caption = ""
     LblInt.Caption = "Version: " & App.Major & "." & App.Minor & "." & App.Revision
     LblNaziv.Caption = "User: " & GetSetting("Tecomatic", "BellPro", "003", "")
-    lblDatumInstalacije.Caption = "Date: " & GetSetting("Tecomatic", "BellPro", "004", "")
+    lblDatumInstalacije.Caption = "From Date: " & GetSetting("Tecomatic", "BellPro", "004", "")
 
     If Not AboutApp = True Then
         
@@ -195,6 +202,13 @@ End Sub
 Private Sub Form_Unload(Cancel As Integer)
 If Not DebugMode = True Then On Error Resume Next
     FrmMain.Show
+End Sub
+
+Private Sub ImageLogo_Click()
+   Dim url As String
+    url = "https://tecomatic.rs"
+
+    ShellExecute 0, "open", url, vbNullString, vbNullString, 1
 End Sub
 
 Private Sub lblClose_Click()

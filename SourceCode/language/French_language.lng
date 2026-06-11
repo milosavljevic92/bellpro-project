@@ -1,0 +1,220 @@
+; BellPro - French Language File
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Definir jours feries
+
+[FrmExport]
+Caption=Exporter l'horaire
+cmdIzvezi=Exporter
+LblRaspored=Horaire:
+MsgRasporedPrazan=Horaire vide, export impossible
+MsgUspesnoIzvezen=Exporte!
+ItemVannastavne=Parascolaire
+
+[FrmInterfejs]
+Caption=BellPro Interface
+lblBellInterfejs=Interface:
+LblBrojPorta=Port:
+cmdTest=TEST
+cmdRefresh=Actualiser
+chDtrCtsEnabled=Detection interface
+chInvertRTS=Inverser relais
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Aucune interface
+MsgTestInterfejsa=Le test activera le relais. Cloche sonnera 5 sec si connectee. Continuer?
+
+[FrmMain]
+mnuRaspored=&Horaire
+mnusvakodnevni=&Modifier
+mnuvannastavne=&Parascolaire
+MnuUvezi=&Importer
+MnuIzvezi=&Exporter
+mnupodesavanja=&Parametres
+mnupodprograma=&Application
+mnuraspusti=&Vacances
+mnupraznici=&Jours feries
+mnuzastitap=&Securite
+mnuinterfejs=&Interface
+mnuprogramu=&Programme
+mnuruucno=&Manuel
+mnuzastitaz=&Verrouiller
+MnuOtkljucaj=Deverrouiller
+mnuupdate=&Mise a jour
+mnuAbout=A propos...
+mnutray=&Fermer
+mnuRegistracija=&Enregistrement
+mnuizlaz=&Quitter
+ColDuzinaZvona=Duree
+TipPortOtvoren=Port ouvert:
+TipGreskaPorta=Erreur port!
+MsgBazaNijePostoji=Base de donnees introuvable! Contacter le support.
+MsgRasporedPrimenjen=Horaire applique
+MsgFajlNepravilan=Format invalide!
+MsgUspesnoUvezen=Importe!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Heure:
+StatusDatum=| Date:
+StatusDanasJe=| Aujourd'hui:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Lundi
+DanUtorak=Mardi
+DanSreda=Mercredi
+DanCetvrtak=Jeudi
+DanPetak=Vendredi
+DanSubota=Samedi
+DanNedelja=Dimanche
+ColNaziv=Nom
+ColVreme=Heure
+MsgIzlaz=Fermer le programme? La cloche sera desactivee.
+CmbRaspored_Tip=Horaires de la base
+ImgDissconn_Tip=Port ouvert, interface absente
+ImgConnected_Tip=BellPro connecte
+ImgZelena_Tip=Cloche active aujourd'hui
+ImgCrvena_Tip=Pas de cloche aujourd'hui
+cmdPrimeni=Appliquer
+MsgZvonoVreme=Cloche a:
+MsgZvonoOpis=Description:
+
+[FrmNoviRaspored]
+Caption=Nouvel horaire
+lblNazivRasporeda=Nom de l'horaire:
+MsgImePostoji=Nom horaire deja utilise!
+
+[FrmOtkljucavanje]
+Caption=Saisir le PIN
+cmdPrijavise=Connexion
+MsgLozinkaNeisp=PIN incorrect!
+
+[FrmPodesavanje]
+Caption=Parametres
+Frame2=Cloche
+lblDuzinaZvona=Duree cloche:
+chZvonoPrekoRazglasa=Cloche via haut-parleur
+chVannastavne=Parascolaire
+chZastitaLozinkom=Protection mot de passe
+chStartWithWin=Demarrer avec Windows
+chObavestiZvono=Notif. a la sonnerie
+chStartMin=Demarrer minimise
+chNeZvoni=Ne pas sonner
+chNeZvoniPraznici=Ne pas sonner feries
+chNeZvoniSubotom=Ne pas sonner samedi
+chNeZvoniNedeljom=Ne pas sonner dimanche
+chNeZvoniRaspust=Ne pas sonner vacances
+lblJezik=Langue:
+SufixSec= sec
+MsgJezikPromenjen=Langue modifiee. Rouvrir les fenetres.
+
+[FrmRaspusti]
+Caption=Definir vacances
+Label5=Vacances 1
+Label6=Vacances 2
+Label9=Vacances 3
+Label12=Vacances 4
+Label1=au
+Label3=au
+Label7=au
+Label10=au
+
+[FrmRegistracija]
+Caption= BellPro | Enregistrement
+cmdDemo=DEMO
+cmdCopy=Copier
+cmdRegistruj=Enregistrer
+lblNazivUstanove=Etablissement:
+LblParametar=Parametre:
+LblLicenca=Licence:
+MsgUspesnoReg=Enregistre! Merci de choisir BellPro!
+MsgNeispravnaLicenca=Licence invalide. Verifier et reessayer.
+MsgKontakt=Contact: office@tecomatic.rs
+MsgGreskaPriReg=Erreur enregistrement. Le programme se ferme. Reessayer.
+
+[FrmRucnoZ]
+Caption=Cloche manuelle
+cmdRucnoZvoni=Sonner
+CmdUpali=Sonner
+CmdUgasi=Arreter
+ItemZvono=Cloche
+ItemRazglas=Haut-parleur
+ItemZvonoRazglas=Cloche + HP
+
+[FrmSplash]
+lblDatumInstalacije=Enregistre le:
+Label1=BellPro - School version
+LblVersionPrefix=Version:
+LblUserPrefix=Utilisateur:
+LblDatePrefix=Date:
+Label3=Support: office@tecomatic.rs
+Label2=Annee: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Gestion horaire
+cmdObrisiVreme=Supprimer
+cmdSacuvaj=Enregistrer
+cmdDodaj=Ajouter
+cmdNazad=Retour
+cmdNovi=Ajouter horaire
+cmdObrisiRaspored=Supprimer horaire
+lblLen=Duree:
+LblDuzinaZvona=Duree:
+lblNazivZvona=Description:
+lblVreme=Heure:
+ColDuzinaZvona=Duree
+SufixSec= sec
+MsgSvakodnevniSistemski=Horaire systeme, suppression impossible!
+MsgRasporedUUpotrebi=Horaire en cours utilisation!
+MsgPotvrda1=Supprimer l'horaire
+MsgPotvrda2=Supprimer cette entree?
+MsgVremeNepravilno=Format heure invalide!
+MsgUspesnoSacuvano=Enregistre!
+ColNaziv=Nom
+ColVreme=Heure
+
+[FrmVanNastavne]
+Caption=Parascolaire
+cmdObrisi=Supprimer
+cmdSacuvaj=Enregistrer
+cmdDodaj=Ajouter
+cmdNazad=Retour
+lblLen=Duree:
+LblDuzinaZvona=Duree:
+lblVreme=Heure:
+lblOpisZvona=Description:
+lblDan=Jour:
+ColDuzinaZvona=Duree
+SufixSec= sec
+ItemPonedeljak=Lundi
+ItemUtorak=Mardi
+ItemSreda=Mercredi
+ItemCetvrtak=Jeudi
+ItemPetak=Vendredi
+ItemSubota=Samedi
+ItemNedelja=Dimanche
+MsgPotvrda=Supprimer cette entree?
+MsgVremeNepravilno=Format heure invalide!
+ColNaziv=Nom
+ColVreme=Heure
+ColDan=Jour
+
+[FrmZastita]
+Caption=Changer PIN
+cmdSacuvaj=Enregistrer
+lblTrenutniPin=PIN actuel [4]:
+lblNoviPin=Nouveau PIN:
+lblPonoviNoviPin=Confirmer PIN:
+MsgNeispravanPin=PIN actuel incorrect!
+MsgNistePotvrdili=PIN non confirme!
+MsgPinNijeIsti=PIN ne correspond pas!
+MsgNoviPinPostavljen=Nouveau PIN defini!
+
+[MdlCommunication]
+MsgPortZatvoren=Port ferme!
+
+[MdlStart]
+MsgVecPokrenut=Programme deja lance!
+
+[CntrlSerial]
+MsgGreskaPorta=Erreur ouverture port:
+MsgPortOtvoren=Port ouvert!
+MsgPortZatvoren=Port ferme!

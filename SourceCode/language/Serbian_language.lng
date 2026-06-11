@@ -1,0 +1,220 @@
+; BellPro - Serbian Language File (Master)
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Definisanje praznika
+
+[FrmExport]
+Caption=Izvoz rasporeda
+cmdIzvezi=Izvezi
+LblRaspored=Raspored:
+MsgRasporedPrazan=Raspored je prazan i ne moze biti izvezen
+MsgUspesnoIzvezen=Uspesno izvezen raspored!
+ItemVannastavne=Vannastavne aktivnosti
+
+[FrmInterfejs]
+Caption=BellPro Interfejs
+lblBellInterfejs=Bell interfejs:
+LblBrojPorta=Broj porta:
+cmdTest=TEST
+cmdRefresh=Refresh
+chDtrCtsEnabled=Detekcija Interfejsa
+chInvertRTS=Invertuj rad releja
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Bez interfejsa
+MsgTestInterfejsa=Testiranjem interfejsa aktiviracete relej. Ukoliko je relej spojen docice do oglasavanja zvona koje ce trajati 5 sec. Da li zelite da odmah to uradite ?
+
+[FrmMain]
+mnuRaspored=&Raspored
+mnusvakodnevni=&Izmena
+mnuvannastavne=&Vannastavne aktivnosti
+MnuUvezi=&Uvezi
+MnuIzvezi=&Izvezi
+mnupodesavanja=&Podesavanja
+mnupodprograma=&Programa
+mnuraspusti=&Raspusti
+mnupraznici=&Praznici
+mnuzastitap=&Zastita
+mnuinterfejs=&Interfejs
+mnuprogramu=&Program
+mnuruucno=&Rucno zvono
+mnuzastitaz=&Zakljucaj
+MnuOtkljucaj=Otkljucaj
+mnuupdate=&Update
+mnuAbout=About...
+mnutray=&Zatvori prozor
+mnuRegistracija=&Registracija
+mnuizlaz=&Izlaz
+ColDuzinaZvona=Duzina Zvona
+TipPortOtvoren=Port otvoren:
+TipGreskaPorta=Greska sa otvaranjem porta!
+MsgBazaNijePostoji=Baza podataka ne postoji! Pozovite tehnicku podrsku kako bih resili ovaj problem.
+MsgRasporedPrimenjen=Raspored je primenjen
+MsgFajlNepravilan=Fajl je nepravilno formatiran!
+MsgUspesnoUvezen=Raspored uspesno je uvezen u program!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Vreme:
+StatusDatum=| Datum:
+StatusDanasJe=| Danas je:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Ponedeljak
+DanUtorak=Utorak
+DanSreda=Sreda
+DanCetvrtak=Cetvrtak
+DanPetak=Petak
+DanSubota=Subota
+DanNedelja=Nedelja
+ColNaziv=Naziv
+ColVreme=Vreme
+MsgIzlaz=Da li ste sigurni da zelite zatvoriti program? Ukoliko ga zatvorite zvono se nece oglasavati.
+CmbRaspored_Tip=Rasporedi definisani u bazi podataka
+ImgDissconn_Tip=Port je otvoren, ali interfejs nije pronadjen
+ImgConnected_Tip=Interfejs BellPro je konektovan
+ImgZelena_Tip=Danas zvoni
+ImgCrvena_Tip=Danas ne zvoni
+cmdPrimeni=Primeni
+MsgZvonoVreme=Zvono za vreme:
+MsgZvonoOpis=Opis:
+
+[FrmNoviRaspored]
+Caption=Novi raspored
+lblNazivRasporeda=Naziv rasporeda:
+MsgImePostoji=Ime rasporeda vec postoji u bazi!
+
+[FrmOtkljucavanje]
+Caption=Unesite PIN
+cmdPrijavise=Prijavi se
+MsgLozinkaNeisp=Lozinka nije ispravana!
+
+[FrmPodesavanje]
+Caption=Podesavanja
+Frame2=Zvono
+lblDuzinaZvona=Duzina zvona:
+chZvonoPrekoRazglasa=Zvono preko razglasa
+chVannastavne=Vannastavne aktivnosti
+chZastitaLozinkom=Zastita lozinkom
+chStartWithWin=Pokreni program uz Windows
+chObavestiZvono=Obavesti kad zvoni
+chStartMin=Minimizuj pri startu
+chNeZvoni=Ne zvoni
+chNeZvoniPraznici=Ne zvoni za praznike
+chNeZvoniSubotom=Ne zvoni subotom
+chNeZvoniNedeljom=Ne zvoni nedeljom
+chNeZvoniRaspust=Ne zvoni za raspust
+lblJezik=Jezik:
+SufixSec= sec
+MsgJezikPromenjen=Jezik je promenjen. Neke forme ce se osveziti pri sledecem otvaranju.
+
+[FrmRaspusti]
+Caption=Zadavanje raspusta
+Label5=Raspust 1
+Label6=Raspust 2
+Label9=Raspust 3
+Label12=Raspust 4
+Label1=do
+Label3=do
+Label7=do
+Label10=do
+
+[FrmRegistracija]
+Caption= BellPro | Registracija programa
+cmdDemo=DEMO
+cmdCopy=Copy
+cmdRegistruj=Registruj
+lblNazivUstanove=Naziv ustanove:
+LblParametar=Parametar:
+LblLicenca=Licenca:
+MsgUspesnoReg=Program uspesno registrovan, hvala sto se odabrali BellPro!
+MsgNeispravnaLicenca=Licenca koju ste uneli nije ispravna, mozda ste je pogresno uneli istu.
+MsgKontakt=Kontakt: office@tecomatic.rs
+MsgGreskaPriReg=Nastala je greska pri registraciji programa, program ce se automatski zatvoriti. Pokusajte ponovo da ga registrujete.
+
+[FrmRucnoZ]
+Caption=Rucno upravljanje zvonom
+cmdRucnoZvoni=Upali Zvono
+CmdUpali=Upali Zvono
+CmdUgasi=Ugasi Zvono
+ItemZvono=Zvono
+ItemRazglas=Razglas
+ItemZvonoRazglas=Zvono + Razglas
+
+[FrmSplash]
+lblDatumInstalacije=Registrovano od:
+Label1=BellPro - School version
+LblVersionPrefix=Version:
+LblUserPrefix=User:
+LblDatePrefix=Date:
+Label3=Support: office@tecomatic.rs
+Label2=Year: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Upravljanje rasporedima
+cmdObrisiVreme=Obrisi
+cmdSacuvaj=Sacuvaj
+cmdDodaj=Dodaj
+cmdNazad=Nazad
+cmdNovi=Dodaj raspored
+cmdObrisiRaspored=Obrisi raspored
+lblLen=Duzina zvona:
+LblDuzinaZvona=Duzina zvona:
+lblNazivZvona=Opis zvona:
+lblVreme=Vreme:
+ColDuzinaZvona=Duzina Zvona
+SufixSec= sec
+MsgSvakodnevniSistemski=Svakodnevni raspored je sistemski raspored i ne moze biti obrisan!
+MsgRasporedUUpotrebi=Raspored koji zelite da obrisete je trenutno u upotrebi!
+MsgPotvrda1=Da li sigurno zelite obrisati raspored
+MsgPotvrda2=Da li sigurno zelite obrisati vreme?
+MsgVremeNepravilno=Vreme formatirano nepravilno!
+MsgUspesnoSacuvano=Uspesno sacuvano!
+ColNaziv=Naziv
+ColVreme=Vreme
+
+[FrmVanNastavne]
+Caption=Vannastavne aktivnosti
+cmdObrisi=Obrisi
+cmdSacuvaj=Sacuvaj
+cmdDodaj=Dodaj
+cmdNazad=Nazad
+lblLen=Duzina zvona:
+LblDuzinaZvona=Duzina zvona:
+lblVreme=Vreme:
+lblOpisZvona=Opis zvona:
+lblDan=Dan:
+ColDuzinaZvona=Duzina Zvona
+SufixSec= sec
+ItemPonedeljak=Ponedeljak
+ItemUtorak=Utorak
+ItemSreda=Sreda
+ItemCetvrtak=Cetvrtak
+ItemPetak=Petak
+ItemSubota=Subota
+ItemNedelja=Nedelja
+MsgPotvrda=Dali ste sigurni da zelite obrisati vreme?
+MsgVremeNepravilno=Vreme formatirano nepravilno!
+ColNaziv=Naziv
+ColVreme=Vreme
+ColDan=Dan
+
+[FrmZastita]
+Caption=Promena PIN-a
+cmdSacuvaj=Sacuvaj
+lblTrenutniPin=Trenutni pin [4 broja]:
+lblNoviPin=Novi pin:
+lblPonoviNoviPin=Potvrdi novi pin:
+MsgNeispravanPin=Trenutni PIN koji ste uneli je neispravan!
+MsgNistePotvrdili=Niste potvrdili novi PIN!
+MsgPinNijeIsti=PIN nije isti u poljima za potvrdu novog!
+MsgNoviPinPostavljen=Novi PIN postavljen!
+
+[MdlCommunication]
+MsgPortZatvoren=Port zatvoren!
+
+[MdlStart]
+MsgVecPokrenut=Program je vec pokrenut!
+
+[CntrlSerial]
+MsgGreskaPorta=Greska sa otvaranjem porta:
+MsgPortOtvoren=Port je otvoren!
+MsgPortZatvoren=Port zatvoren!

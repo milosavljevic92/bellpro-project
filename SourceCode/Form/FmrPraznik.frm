@@ -465,6 +465,7 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Private Sub Form_Load()
+    ApplyLanguage Me
     If Not DebugMode = True Then On Error Resume Next
     Text9.Text = GetProfile("config", "001", Text9.Text, getConfigPath)
     Text10.Text = GetProfile("config", "002", Text10.Text, getConfigPath)

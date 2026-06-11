@@ -1,0 +1,220 @@
+; BellPro - Macedonian Language File (Latin transliteration)
+; Tecomatic | office@tecomatic.rs
+
+[FmrPraznik]
+Caption=Definiranje praznici
+
+[FrmExport]
+Caption=Izvoz na raspored
+cmdIzvezi=Izvezi
+LblRaspored=Raspored:
+MsgRasporedPrazan=Rasporedot e prazen, izvozot ne e mozhen
+MsgUspesnoIzvezen=Izvozot e uspeshen!
+ItemVannastavne=Vonuchilishni
+
+[FrmInterfejs]
+Caption=BellPro Interfejs
+lblBellInterfejs=Interfejs:
+LblBrojPorta=Porta:
+cmdTest=TEST
+cmdRefresh=Osvezhuvanje
+chDtrCtsEnabled=Detekcija interfejs
+chInvertRTS=Invertiraj relej
+ItemBellCommDirect=BellCommDirect
+ItemBellProRelay=BellProRelay
+ItemBezInterfejsa=Bez interfejs
+MsgTestInterfejsa=Testot ke go aktivira relejot. Zvonceto ke zvoni 5 sek ako e povrzano. Prodolzhi?
+
+[FrmMain]
+mnuRaspored=&Raspored
+mnusvakodnevni=&Izmena
+mnuvannastavne=&Vonuchilishni
+MnuUvezi=&Uvezi
+MnuIzvezi=&Izvezi
+mnupodesavanja=&Postavki
+mnupodprograma=&Aplikacija
+mnuraspusti=&Raspusti
+mnupraznici=&Praznici
+mnuzastitap=&Zashtita
+mnuinterfejs=&Interfejs
+mnuprogramu=&Program
+mnuruucno=&Rachno
+mnuzastitaz=&Zakljuchaj
+MnuOtkljucaj=Otkluchaj
+mnuupdate=&Azhuriraj
+mnuAbout=Za programot...
+mnutray=&Zatvori prozor
+mnuRegistracija=&Registracija
+mnuizlaz=&Izlez
+ColDuzinaZvona=Traewe
+TipPortOtvoren=Portata otvorena:
+TipGreskaPorta=Greshka pri otvoranje!
+MsgBazaNijePostoji=Bazata na podatoci ne e najdena! Kontaktirajte poddrshka.
+MsgRasporedPrimenjen=Rasporedot e primen??
+MsgFajlNepravilan=Nevazhechki format na datoteka!
+MsgUspesnoUvezen=Uvozot e uspeshen!
+CaptionApp=BellPro - Full Edition - V
+StatusVreme= Vreme:
+StatusDatum=| Datum:
+StatusDanasJe=| Denes:
+StatusTecomatic=| Tecomatic.rs
+DanPonedeljak=Ponedelnik
+DanUtorak=Vtornik
+DanSreda=Sreda
+DanCetvrtak=Chetvrtok
+DanPetak=Petok
+DanSubota=Sabota
+DanNedelja=Nedela
+ColNaziv=Naziv
+ColVreme=Vreme
+MsgIzlaz=Zatvoranje na programot? Zvonceto ke se deaktivira.
+CmbRaspored_Tip=Raspored od bazata
+ImgDissconn_Tip=Portata otvorena, interfejsot ne e najden
+ImgConnected_Tip=BellPro povrz??
+ImgZelena_Tip=Zvonceto zvoni denes
+ImgCrvena_Tip=Nema zvonewe denes
+cmdPrimeni=Primeni
+MsgZvonoVreme=Zvonewe vo:
+MsgZvonoOpis=Opis:
+
+[FrmNoviRaspored]
+Caption=Nov raspored
+lblNazivRasporeda=Naziv:
+MsgImePostoji=Nazivot veke postoi!
+
+[FrmOtkljucavanje]
+Caption=Vnesete PIN
+cmdPrijavise=Prijava
+MsgLozinkaNeisp=Pogreshen PIN!
+
+[FrmPodesavanje]
+Caption=Postavki
+Frame2=Zvonec
+lblDuzinaZvona=Traewe zvonec:
+chZvonoPrekoRazglasa=Zvonec preku zvuchnik
+chVannastavne=Vonuchilishni
+chZastitaLozinkom=Zashtita so lozinka
+chStartWithWin=Startuvaj so Windows
+chObavestiZvono=Izvestuvanje pri zvonewe
+chStartMin=Startuvaj minimizirano
+chNeZvoni=Ne zvoni
+chNeZvoniPraznici=Ne zvoni za praznici
+chNeZvoniSubotom=Ne zvoni vo sabota
+chNeZvoniNedeljom=Ne zvoni vo nedela
+chNeZvoniRaspust=Ne zvoni za raspust
+lblJezik=Jazik:
+SufixSec= sek
+MsgJezikPromenjen=Jazikot e smenet. Povtorno otvorete gi prozorcite.
+
+[FrmRaspusti]
+Caption=Zadavanje raspust
+Label5=Raspust 1
+Label6=Raspust 2
+Label9=Raspust 3
+Label12=Raspust 4
+Label1=do
+Label3=do
+Label7=do
+Label10=do
+
+[FrmRegistracija]
+Caption= BellPro | Registracija
+cmdDemo=DEMO
+cmdCopy=Kopiraj
+cmdRegistruj=Registriraj
+lblNazivUstanove=Ustanova:
+LblParametar=Parametar:
+LblLicenca=Licenca:
+MsgUspesnoReg=Registracijata e uspeshna! Blagodari?? za izborot na BellPro!
+MsgNeispravnaLicenca=Nevazhechka licenca. Proverete i obidete se povtorno.
+MsgKontakt=Kontakt: office@tecomatic.rs
+MsgGreskaPriReg=Greshka pri registracija. Programot ke se zatvori. Obidete se povtorno.
+
+[FrmRucnoZ]
+Caption=Rachno zvonewe
+cmdRucnoZvoni=Vkluchi zvonec
+CmdUpali=Vkluchi zvonec
+CmdUgasi=Iskluchi zvonec
+ItemZvono=Zvonec
+ItemRazglas=Zvuchnik
+ItemZvonoRazglas=Zvonec + Zvuchnik
+
+[FrmSplash]
+lblDatumInstalacije=Registrirano:
+Label1=BellPro - School version
+LblVersionPrefix=Verzija:
+LblUserPrefix=Korisnik:
+LblDatePrefix=Datum:
+Label3=Poddrshka: office@tecomatic.rs
+Label2=Godina: 2007 - 2026
+
+[FrmSvakodnevni]
+Caption=Upravuvanje raspored
+cmdObrisiVreme=Izbrishe
+cmdSacuvaj=Zachuvaj
+cmdDodaj=Dodaj
+cmdNazad=Nazad
+cmdNovi=Dodaj raspored
+cmdObrisiRaspored=Izbrishe raspored
+lblLen=Traewe:
+LblDuzinaZvona=Traewe:
+lblNazivZvona=Opis:
+lblVreme=Vreme:
+ColDuzinaZvona=Traewe
+SufixSec= sek
+MsgSvakodnevniSistemski=Sistemskiot raspored ne mozhe da se izbrishe!
+MsgRasporedUUpotrebi=Rasporedot e vo upotreba!
+MsgPotvrda1=Izbrishe raspored
+MsgPotvrda2=Izbrishe go ovoj zapis?
+MsgVremeNepravilno=Nevazhechki format na vremeto!
+MsgUspesnoSacuvano=Zachuvano!
+ColNaziv=Naziv
+ColVreme=Vreme
+
+[FrmVanNastavne]
+Caption=Vonuchilishni
+cmdObrisi=Izbrishe
+cmdSacuvaj=Zachuvaj
+cmdDodaj=Dodaj
+cmdNazad=Nazad
+lblLen=Traewe:
+LblDuzinaZvona=Traewe:
+lblVreme=Vreme:
+lblOpisZvona=Opis:
+lblDan=Den:
+ColDuzinaZvona=Traewe
+SufixSec= sek
+ItemPonedeljak=Ponedelnik
+ItemUtorak=Vtornik
+ItemSreda=Sreda
+ItemCetvrtak=Chetvrtok
+ItemPetak=Petok
+ItemSubota=Sabota
+ItemNedelja=Nedela
+MsgPotvrda=Izbrishe go ovoj zapis?
+MsgVremeNepravilno=Nevazhechki format na vremeto!
+ColNaziv=Naziv
+ColVreme=Vreme
+ColDan=Den
+
+[FrmZastita]
+Caption=Promena PIN
+cmdSacuvaj=Zachuvaj
+lblTrenutniPin=Tekov?? PIN [4]:
+lblNoviPin=Nov PIN:
+lblPonoviNoviPin=Potvrd? PIN:
+MsgNeispravanPin=Pogreshen tekoven PIN!
+MsgNistePotvrdili=Noviot PIN ne e potvrd?n!
+MsgPinNijeIsti=PIN ne se sovpaga!
+MsgNoviPinPostavljen=Noviot PIN e postav??!
+
+[MdlCommunication]
+MsgPortZatvoren=Portata e zatvorena!
+
+[MdlStart]
+MsgVecPokrenut=Programot veke raboti!
+
+[CntrlSerial]
+MsgGreskaPorta=Greshka pri otvoranje porta:
+MsgPortOtvoren=Portata e otvorena!
+MsgPortZatvoren=Portata e zatvorena!

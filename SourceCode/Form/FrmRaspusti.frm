@@ -326,6 +326,7 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 Private Sub Form_Load()
+    ApplyLanguage Me
     If Not DebugMode = True Then On Error Resume Next
     
    Text1.Text = GetProfile("config", "013", "", getConfigPath)

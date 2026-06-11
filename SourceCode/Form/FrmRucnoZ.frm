@@ -3,7 +3,7 @@ Begin VB.Form FrmRucnoZ
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
    Caption         =   "Rucno upravljanje zvonom:"
-   ClientHeight    =   2280
+   ClientHeight    =   1935
    ClientLeft      =   45
    ClientTop       =   315
    ClientWidth     =   2910
@@ -11,7 +11,7 @@ Begin VB.Form FrmRucnoZ
    LinkTopic       =   "Form2"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2280
+   ScaleHeight     =   1935
    ScaleWidth      =   2910
    StartUpPosition =   2  'CenterScreen
    Begin BellPro.XPButton cmdRucnoZvoni 
@@ -73,21 +73,21 @@ Option Explicit
 Private Sub cmdRucnoZvoni_Click()
 'If Not DebugMode = True Then On Error Resume Next
     Select Case cmdRucnoZvoni.Caption
-    Case "Upali Zvono"
-        cmdRucnoZvoni.Caption = "Ugasi Zvono"
+    Case t("FrmRucnoZ", "CmdUpali")
+        cmdRucnoZvoni.Caption = t("FrmRucnoZ", "CmdUgasi")
         CmbNacinZvona.Enabled = False
-        If CmbNacinZvona.Text = "Zvono" Then HitTheRelay (True)
-        If CmbNacinZvona.Text = "Razglas" Then PlayMp3Sound
-        If CmbNacinZvona.Text = "Zvono + Razglas" Then
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemZvono") Then HitTheRelay (True)
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemRazglas") Then PlayMp3Sound
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemZvonoRazglas") Then
             HitTheRelay (True)
             PlayMp3Sound
         End If
-    Case "Ugasi Zvono"
-        cmdRucnoZvoni.Caption = "Upali Zvono"
+    Case t("FrmRucnoZ", "CmdUgasi")
+        cmdRucnoZvoni.Caption = t("FrmRucnoZ", "CmdUpali")
          CmbNacinZvona.Enabled = True
-        If CmbNacinZvona.Text = "Zvono" Then HitTheRelay (False)
-        If CmbNacinZvona.Text = "Razglas" Then StopMp3Sound
-        If CmbNacinZvona.Text = "Zvono + Razglas" Then
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemZvono") Then HitTheRelay (False)
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemRazglas") Then StopMp3Sound
+        If CmbNacinZvona.Text = t("FrmRucnoZ", "ItemZvonoRazglas") Then
             HitTheRelay (False)
             StopMp3Sound
         End If
@@ -95,9 +95,10 @@ Private Sub cmdRucnoZvoni_Click()
 End Sub
 
 Private Sub Form_Load()
-CmbNacinZvona.AddItem "Zvono"
-CmbNacinZvona.AddItem "Razglas"
-CmbNacinZvona.AddItem "Zvono + Razglas"
+    ApplyLanguage Me
+CmbNacinZvona.AddItem t("FrmRucnoZ", "ItemZvono")
+CmbNacinZvona.AddItem t("FrmRucnoZ", "ItemRazglas")
+CmbNacinZvona.AddItem t("FrmRucnoZ", "ItemZvonoRazglas")
 CmbNacinZvona.ListIndex = 0
 End Sub
 

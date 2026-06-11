@@ -162,27 +162,31 @@ Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
+Private Sub Form_Load()
+    ApplyLanguage Me
+End Sub
+
 Private Sub CmdSacuvaj_Click()
 If Not DebugMode = True Then On Error Resume Next
     Dim lozinka As String
     lozinka = Kriptuj(GetSetting("Tecomatic", "BellPro", "001", ""), False)
     If Not TxtTrenutna.Text = lozinka Then
-        MsgBox "Trenutni PIN koji ste uneli je neispravan!", vbCritical
+        MsgBox T("FrmZastita", "MsgNeispravanPin"), vbCritical
         Call ClearTextBoxes
         Exit Sub
     Else
         If TxtNova.Text = "" And TxtPonovoNova.Text = "" Then
-            MsgBox "Niste potvrdili novi PIN!", vbCritical
+            MsgBox T("FrmZastita", "MsgNistePotvrdili"), vbCritical
             Call ClearTextBoxes
             Exit Sub
         Else
                 If Not TxtNova.Text = TxtPonovoNova.Text Then
-                    MsgBox "PIN nije isti u poljima za potvrdu novog!", vbCritical
+                    MsgBox T("FrmZastita", "MsgPinNijeIsti"), vbCritical
                     Call ClearTextBoxes
                     Exit Sub
                 Else
                     SaveSetting "Tecomatic", "BellPro", "001", Kriptuj(TxtNova.Text, True)
-                    MsgBox "Novi PIN postavljen!", vbInformation
+                    MsgBox T("FrmZastita", "MsgNoviPinPostavljen"), vbInformation
                     FrmMain.Show
                     Unload Me
                     Exit Sub

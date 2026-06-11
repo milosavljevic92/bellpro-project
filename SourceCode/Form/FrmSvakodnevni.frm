@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "MSDATGRD.OCX"
+Object = "{CDE57A40-8B86-11D0-B3C6-00A0C90AEA82}#1.0#0"; "msdatgrd.ocx"
 Begin VB.Form FrmSvakodnevni 
    BackColor       =   &H00E0E0E0&
    BorderStyle     =   4  'Fixed ToolWindow
@@ -7,14 +7,14 @@ Begin VB.Form FrmSvakodnevni
    ClientHeight    =   7635
    ClientLeft      =   45
    ClientTop       =   315
-   ClientWidth     =   6120
+   ClientWidth     =   6285
    ControlBox      =   0   'False
    Icon            =   "FrmSvakodnevni.frx":0000
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
    ScaleHeight     =   7635
-   ScaleWidth      =   6120
+   ScaleWidth      =   6285
    StartUpPosition =   1  'CenterOwner
    Begin VB.CommandButton cmdTestTime 
       Caption         =   "TEST TIME"
@@ -30,8 +30,8 @@ Begin VB.Form FrmSvakodnevni
       Left            =   2400
       TabIndex        =   7
       Top             =   6360
-      Width           =   3615
-      _ExtentX        =   6376
+      Width           =   3735
+      _ExtentX        =   6588
       _ExtentY        =   503
    End
    Begin VB.ComboBox CmbRaspored 
@@ -73,7 +73,7 @@ Begin VB.Form FrmSvakodnevni
       MaxLength       =   55
       TabIndex        =   0
       Top             =   5880
-      Width           =   4815
+      Width           =   4935
    End
    Begin VB.TextBox TxtVreme 
       Alignment       =   2  'Center
@@ -90,7 +90,7 @@ Begin VB.Form FrmSvakodnevni
          Strikethrough   =   0   'False
       EndProperty
       Height          =   375
-      Left            =   5040
+      Left            =   5160
       MaxLength       =   5
       TabIndex        =   1
       Top             =   5880
@@ -102,8 +102,8 @@ Begin VB.Form FrmSvakodnevni
       TabIndex        =   2
       TabStop         =   0   'False
       Top             =   840
-      Width           =   5895
-      _ExtentX        =   10398
+      Width           =   6015
+      _ExtentX        =   10610
       _ExtentY        =   7858
       _Version        =   393216
       AllowUpdate     =   -1  'True
@@ -168,17 +168,17 @@ Begin VB.Form FrmSvakodnevni
    End
    Begin BellPro.XPButton cmdObrisiVreme 
       Height          =   615
-      Left            =   2760
+      Left            =   3480
       TabIndex        =   9
       Top             =   6960
       Width           =   1215
       _ExtentX        =   2143
       _ExtentY        =   1085
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Segoe UI"
-         Size            =   14.25
+         Name            =   "Segoe UI Semibold"
+         Size            =   12
          Charset         =   0
-         Weight          =   700
+         Weight          =   600
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -189,15 +189,15 @@ Begin VB.Form FrmSvakodnevni
    End
    Begin BellPro.XPButton cmdSacuvaj 
       Height          =   615
-      Left            =   1440
+      Left            =   1800
       TabIndex        =   10
       Top             =   6960
-      Width           =   1215
-      _ExtentX        =   2143
+      Width           =   1575
+      _ExtentX        =   2778
       _ExtentY        =   1085
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Segoe UI"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -213,12 +213,12 @@ Begin VB.Form FrmSvakodnevni
       Left            =   120
       TabIndex        =   11
       Top             =   6960
-      Width           =   1215
-      _ExtentX        =   2143
+      Width           =   1575
+      _ExtentX        =   2778
       _ExtentY        =   1085
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Segoe UI"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -231,7 +231,7 @@ Begin VB.Form FrmSvakodnevni
    End
    Begin BellPro.XPButton cmdNazad 
       Height          =   615
-      Left            =   4800
+      Left            =   4920
       TabIndex        =   12
       Top             =   6960
       Width           =   1215
@@ -239,7 +239,7 @@ Begin VB.Form FrmSvakodnevni
       _ExtentY        =   1085
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Segoe UI"
-         Size            =   14.25
+         Size            =   12
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -259,10 +259,10 @@ Begin VB.Form FrmSvakodnevni
       _ExtentX        =   2778
       _ExtentY        =   661
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Segoe UI"
-         Size            =   9.75
+         Name            =   "Segoe UI Semibold"
+         Size            =   9
          Charset         =   0
-         Weight          =   700
+         Weight          =   600
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -273,17 +273,17 @@ Begin VB.Form FrmSvakodnevni
    End
    Begin BellPro.XPButton cmdObrisiRaspored 
       Height          =   375
-      Left            =   4320
+      Left            =   4440
       TabIndex        =   8
       Top             =   240
       Width           =   1575
       _ExtentX        =   2778
       _ExtentY        =   661
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-         Name            =   "Segoe UI"
-         Size            =   9.75
+         Name            =   "Segoe UI Semibold"
+         Size            =   9
          Charset         =   0
-         Weight          =   700
+         Weight          =   600
          Underline       =   0   'False
          Italic          =   0   'False
          Strikethrough   =   0   'False
@@ -316,7 +316,7 @@ Begin VB.Form FrmSvakodnevni
       BorderColor     =   &H00808080&
       BorderWidth     =   2
       X1              =   120
-      X2              =   6000
+      X2              =   6120
       Y1              =   6840
       Y2              =   6840
    End
@@ -324,7 +324,7 @@ Begin VB.Form FrmSvakodnevni
       Height          =   615
       Left            =   120
       Top             =   120
-      Width           =   5895
+      Width           =   6015
    End
    Begin VB.Label lblNazivZvona 
       Alignment       =   2  'Center
@@ -362,7 +362,7 @@ Begin VB.Form FrmSvakodnevni
       EndProperty
       ForeColor       =   &H00000000&
       Height          =   255
-      Left            =   5040
+      Left            =   5160
       TabIndex        =   3
       Top             =   5520
       Width           =   975
@@ -371,7 +371,7 @@ Begin VB.Form FrmSvakodnevni
       BorderColor     =   &H00808080&
       BorderWidth     =   2
       X1              =   120
-      X2              =   6000
+      X2              =   6120
       Y1              =   5400
       Y2              =   5400
    End
@@ -392,7 +392,7 @@ If Not DebugMode = True Then On Error Resume Next
     Me.TxtNaziv.Text = tabela.Fields("Naziv").value
     Me.TxtVreme.Text = tabela.Fields("Vreme").value
     sldLen.value = ReturnNonAlpha(tabela.Fields("DuzinaZvona").value)
-    lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+    lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
 End Sub
 Private Sub CmbRaspored_Click()
 If Not DebugMode = True Then On Error Resume Next
@@ -401,7 +401,7 @@ Call PostaviGrid(CmbRaspored.Text)
         Me.TxtNaziv.Text = tabela.Fields("Naziv").value
         Me.TxtVreme.Text = tabela.Fields("Vreme").value
         sldLen.value = ReturnNonAlpha(tabela.Fields("DuzinaZvona").value)
-        lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+        lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
     End If
 End Sub
 Private Sub CmdDodaj_Click()
@@ -413,7 +413,7 @@ If Not DebugMode = True Then On Error Resume Next
     TxtNaziv.Text = ""
     TxtVreme.Text = ""
     sldLen.value = GetProfile("config", "025", 8, getConfigPath)
-    lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+    lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
     tabela.AddNew
     InsertNew = True
 End Sub
@@ -434,15 +434,15 @@ Private Sub cmdObrisiRaspored_Click()
 If Not DebugMode = True Then On Error Resume Next
     Dim odgovor
     If CmbRaspored.Text = "Svakodnevni" Then
-        MsgBox "Svakodnevni raspored je sistemski raspored i ne moze biti obrisan!", vbInformation
+        MsgBox t("FrmSvakodnevni", "MsgSvakodnevniSistemski"), vbInformation
         Exit Sub
     End If
     If GetProfile("config", "021", "", getConfigPath) = CmbRaspored.Text Then
-        odgovor = MsgBox("Raspored koji zelite da obrisete je trenutno u upotrebi!" & vbNewLine & "Da li sigurno zelite obrisati raspored " & Me.CmbRaspored.Text & " ?", vbQuestion & vbYesNo)
+        odgovor = MsgBox(t("FrmSvakodnevni", "MsgRasporedUUpotrebi") & vbNewLine & t("FrmSvakodnevni", "MsgPotvrda1") & " " & Me.CmbRaspored.Text & " ?", vbQuestion & vbYesNo)
         If odgovor = vbYes Then Call ObrisiRaspored(CmbRaspored.Text)
         If odgovor = vbNo Then Exit Sub
     Else
-        odgovor = MsgBox("Da li sigurno zelite obrisati raspored " & Me.CmbRaspored.Text & " ?", vbYesNo)
+        odgovor = MsgBox(t("FrmSvakodnevni", "MsgPotvrda1") & " " & Me.CmbRaspored.Text & " ?", vbYesNo)
         If odgovor = vbYes Then Call ObrisiRaspored(CmbRaspored.Text)
         If odgovor = vbNo Then Exit Sub
     End If
@@ -452,14 +452,14 @@ Private Sub cmdObrisiVreme_Click()
     If Not DebugMode = True Then On Error Resume Next
     If tabela.RecordCount = 0 Then Exit Sub
     Dim obrisi As Integer
-    obrisi = MsgBox("Dali ste sigurni da zelite obrisati vreme?", vbQuestion & vbYesNo)
+    obrisi = MsgBox(t("FrmSvakodnevni", "MsgPotvrda2"), vbQuestion & vbYesNo)
     If obrisi = vbYes Then tabela.Delete
     If obrisi = vbNo Then Exit Sub
     If tabela.RecordCount = 0 Then
         Me.TxtNaziv.Text = ""
         Me.TxtVreme.Text = ""
         sldLen.value = GetProfile("config", "025", 8, getConfigPath)
-        lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+        lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
         cmdObrisiVreme.Enabled = False
     End If
 End Sub
@@ -467,7 +467,7 @@ End Sub
 Private Sub CmdSacuvaj_Click()
 If Not DebugMode = True Then On Error Resume Next
     If ProveriFormatVremena(TxtVreme.Text) = False Then
-        MsgBox "Vreme formatirano nepravilno!", vbCritical
+        MsgBox t("FrmSvakodnevni", "MsgVremeNepravilno"), vbCritical
         Exit Sub
     End If
     If tabela.RecordCount = 0 Then Exit Sub
@@ -481,7 +481,7 @@ If Not DebugMode = True Then On Error Resume Next
     tabela.Fields("DuzinaZvona").value = sldLen.value & " sec"
     tabela.Update
     InsertNew = False
-    MsgBox "Uspesno sacuvano!", vbInformation
+    MsgBox t("FrmSvakodnevni", "MsgUspesnoSacuvano"), vbInformation
 End Sub
 Private Sub genTestRecord()
     tabela.MoveFirst
@@ -506,6 +506,7 @@ genTestRecord
 End Sub
 
 Private Sub Form_Load()
+    ApplyLanguage Me
 If Not DebugMode = True Then On Error Resume Next
 If DebugMode = True Then cmdTestTime.Visible = True
     Call PostaviComboPomocni
@@ -515,7 +516,7 @@ If DebugMode = True Then cmdTestTime.Visible = True
         Me.TxtNaziv.Text = tabela.Fields("Naziv").value
         Me.TxtVreme.Text = tabela.Fields("Vreme").value
         Me.sldLen.value = ReturnNonAlpha(tabela.Fields("DuzinaZvona").value)
-        lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+        lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
     Else
         cmdSacuvaj.Enabled = False
         cmdObrisiVreme.Enabled = False
@@ -528,7 +529,7 @@ On Error Resume Next
         Me.TxtNaziv.Text = tabela.Fields("Naziv").value
         Me.TxtVreme.Text = tabela.Fields("Vreme").value
         sldLen.value = ReturnNonAlpha(tabela.Fields("DuzinaZvona").value)
-        lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+        lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
     End If
 End Sub
 
@@ -567,7 +568,7 @@ Private Sub PostaviGrid(NazivRasporeda As String)
     TxtNaziv.Text = ""
     TxtVreme.Text = ""
     sldLen.value = GetProfile("config", "025", 8, getConfigPath)
-    lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+    lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
     tabela.Open "SELECT * FROM raspored WHERE Raspored='" & NazivRasporeda & "'", FrmMain.Konekcija, adOpenStatic, adLockOptimistic, adCmdText
     If tabela.RecordCount = 0 Then
         tabela.Close
@@ -582,7 +583,9 @@ Private Sub PostaviGrid(NazivRasporeda As String)
     Grid.Columns.Remove ("Dan")
     Grid.Columns("Vreme").Width = 1250
     Grid.Columns("Naziv").Width = 2950
-    Grid.Columns(2).Caption = "Duzina Zvona"
+    Grid.Columns("Naziv").Caption = t("FrmSvakodnevni", "ColNaziv")
+    Grid.Columns("Vreme").Caption = t("FrmSvakodnevni", "ColVreme")
+    Grid.Columns(2).Caption = t("FrmSvakodnevni", "ColDuzinaZvona")
     Grid.Columns(2).Width = 1250
     Grid.Columns(2).Alignment = dbgCenter
 End Sub
@@ -617,5 +620,5 @@ End Sub
 
 
 Private Sub sldLen_Change(MyVal As Long, myMaxVal As Long)
-  lblLen.Caption = "Duzina zvona: " & sldLen.value & " sec"
+  lblLen.Caption = t("FrmSvakodnevni", "LblDuzinaZvona") & " " & sldLen.value & t("FrmSvakodnevni", "SufixSec")
 End Sub
