@@ -32,16 +32,16 @@ BellPro is a robust, open-source software solution designed to automate school b
 
 ## Key Features
 
-- **Unlimited Named Schedules** — Create and manage any number of named bell schedules (e.g. *Regular*, *Short Classes*, *Exam Day*). Switch the active schedule with a single click.
-- **Smart Calendar Logic** — The engine automatically suppresses ringing on weekends, up to 12 defined public holidays, and up to 4 seasonal school break periods.
-- **Extracurricular Support** — A separate day-of-week schedule for sports events, evening activities, or other recurring non-teaching events.
-- **Bell Output Modes** — Drive a physical relay (via RS232 RTS pin), play an MP3 file through the PC speakers/PA system, or both simultaneously.
-- **System Resilience** — Configurable auto-start with Windows and automatic recovery after power outages or reboots.
-- **PIN Protection** — Secure the entire configuration behind a 4-digit PIN to prevent unauthorized changes.
-- **Data Portability** — Import and export any schedule as an XML file for backup, sharing, or bulk deployment across multiple schools.
-- **Desktop Notifications** — Optional animated tray popup shows the bell time and description when the bell fires.
-- **Manual Override** — Ring or stop the bell at any time from the manual control panel, independently of the schedule.
-- **Multi-Language UI** — Interface available in 13 languages, switchable live at runtime without any restart.
+- **Unlimited Named Schedules** - Create and manage any number of named bell schedules (e.g. *Regular*, *Short Classes*, *Exam Day*). Switch the active schedule with a single click.
+- **Smart Calendar Logic** - The engine automatically suppresses ringing on weekends, up to 12 defined public holidays, and up to 4 seasonal school break periods.
+- **Extracurricular Support** - A separate day-of-week schedule for sports events, evening activities, or other recurring non-teaching events.
+- **Bell Output Modes** - Drive a physical relay (via RS232 RTS pin), play an MP3 file through the PC speakers/PA system, or both simultaneously.
+- **System Resilience** - Configurable auto-start with Windows and automatic recovery after power outages or reboots.
+- **PIN Protection** - Secure the entire configuration behind a 4-digit PIN to prevent unauthorized changes.
+- **Data Portability** - Import and export any schedule as an XML file for backup, sharing, or bulk deployment across multiple schools.
+- **Desktop Notifications** - Optional animated tray popup shows the bell time and description when the bell fires.
+- **Manual Override** - Ring or stop the bell at any time from the manual control panel, independently of the schedule.
+- **Multi-Language UI** - Interface available in 13 languages, switchable live at runtime without any restart.
 
 ---
 
@@ -63,7 +63,7 @@ BellPro is a robust, open-source software solution designed to automate school b
 |-----------|---------|
 | OS | Windows XP / Vista / 7 / 10 / 11 (32-bit or 64-bit with WOW64) |
 | Runtime | VB6 runtime (included in most Windows installations) |
-| SQLite ODBC | `sqliteodbc.exe` — provided in `Tools\` folder |
+| SQLite ODBC | `sqliteodbc.exe` - provided in `Tools\` folder |
 | Serial port | Native COM port recommended; USB-to-Serial supported (see [Hardware](#hardware-setup)) |
 
 ### Step-by-Step
@@ -97,18 +97,18 @@ BellPro is a robust, open-source software solution designed to automate school b
 
 The main window shows the active schedule in a grid, the current time and date in the status bar, and interface connection status icons in the top-right corner.
 
-- **Green bell icon** — bell is active today (schedule will fire)
-- **Red bell icon** — bell is suppressed today (weekend, holiday, or break)
-- **Interface icons** — show whether the RS232 relay interface is connected and detected
+- **Green bell icon** - bell is active today (schedule will fire)
+- **Red bell icon** - bell is suppressed today (weekend, holiday, or break)
+- **Interface icons** - show whether the RS232 relay interface is connected and detected
 
 Use the **Schedule** dropdown and **Apply** button to switch the active schedule without opening the editor.
 
 ### Schedules
 
 BellPro uses named schedules. Each schedule contains any number of timed bell entries, each with:
-- **Time** — in `HH:MM` format (24-hour)
-- **Description** — shown in the notification popup when the bell fires
-- **Duration** — how long the relay/sound stays active (in seconds)
+- **Time** - in `HH:MM` format (24-hour)
+- **Description** - shown in the notification popup when the bell fires
+- **Duration** - how long the relay/sound stays active (in seconds)
 
 The built-in `Svakodnevni` (*Everyday*) schedule is the system default and cannot be deleted. All other schedules can be freely created, renamed, and removed.
 
@@ -143,12 +143,12 @@ Program → Manual Bell opens a panel that lets you ring or stop the bell immedi
 | Start with Windows | Add BellPro to the Windows startup registry key |
 | Notify when bell rings | Show desktop popup when the bell fires |
 | Minimize on startup | Start minimized to the system tray |
-| Do not ring | Master mute — suppress all ringing regardless of schedule |
+| Do not ring | Master mute - suppress all ringing regardless of schedule |
 | Do not ring on holidays | Suppress ringing on dates defined in the Holidays list |
 | Do not ring on Saturdays | Suppress ringing every Saturday |
 | Do not ring on Sundays | Suppress ringing every Sunday |
 | Do not ring during breaks | Suppress ringing during date ranges defined in Breaks |
-| Language | UI language — takes effect immediately, no restart needed |
+| Language | UI language - takes effect immediately, no restart needed |
 
 ### PIN Protection
 
@@ -186,11 +186,11 @@ When password protection is enabled, the main interface is locked on startup. Cl
 | Module | Purpose |
 |--------|---------|
 | `MdlStart.bas` | Application entry point (`Sub Main`). Checks for duplicate instances, initializes config, loads language, shows registration screen. |
-| `MdlBellLogic.bas` | `ProveriSve()` — evaluates whether the bell should be suppressed right now based on day-of-week, holiday list, and break date ranges. Returns `True` if suppressed. |
+| `MdlBellLogic.bas` | `ProveriSve()` - evaluates whether the bell should be suppressed right now based on day-of-week, holiday list, and break date ranges. Returns `True` if suppressed. |
 | `MdlCommunication.bas` | High-level wrappers for `OpenPort`, `ClosePort`, `HitTheRelay`, `CheckInterface`, `PortState`. Delegates to `CntrlSerial`. |
 | `MdlBellProRelay.bas` | HID USB relay driver (alternative interface using `VID_16D0&PID_0753` HID device via `CreateFile`/`WriteFile` kernel32 calls). |
 | `MdlExternalDevices.bas` | Placeholder for future external device integrations. |
-| `MdlLanguage.bas` | Full localization engine — INI parser, in-memory key-value cache, `T()` translation function, `ApplyLanguage()` for runtime form refresh. |
+| `MdlLanguage.bas` | Full localization engine - INI parser, in-memory key-value cache, `T()` translation function, `ApplyLanguage()` for runtime form refresh. |
 | `MdlLocalization.bas` | Legacy stub kept for backward compatibility. Delegates to `MdlLanguage`. |
 | `MdlHelper.bas` | Utility functions: `VolumeSerialNumber`, `checkDoesDBexist`, `ProveriFormatVremena`, `getConfigPath`, `Kriptuj` (XOR cipher for PIN storage), `GenerateIniFileIfNotExist`. |
 | `MdlLicenca.bas` | License key generation and validation (ADFGVX cipher). |
@@ -233,7 +233,7 @@ When password protection is enabled, the main interface is locked on startup. Cl
 
 BellPro uses a single SQLite database (`base.sqlite`). The two main tables are:
 
-**`Raspored`** — Bell time entries
+**`Raspored`** - Bell time entries
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -244,7 +244,7 @@ BellPro uses a single SQLite database (`base.sqlite`). The two main tables are:
 | Dan | TEXT | Day filter (`pon - ned` for daily, or specific day for extracurricular) |
 | DuzinaZvona | TEXT | Duration string e.g. `12 sec` |
 
-**`NaziviRasporeda`** — Schedule name registry
+**`NaziviRasporeda`** - Schedule name registry
 
 | Column | Type | Description |
 |--------|------|-------------|
@@ -304,7 +304,7 @@ PCB design files (Sprint Layout 5.0 format) are located in `Hardware\`.
 | Pin 7 | RTS | PC → Interface | Relay drive output |
 | Pin 4 | DTR | PC → Interface | Interface detection loopback source |
 | Pin 8 | CTS | Interface → PC | Interface detection loopback return |
-| Pin 5 | GND | — | Signal ground |
+| Pin 5 | GND | - | Signal ground |
 
 The DTR→CTS loopback allows BellPro to detect whether the interface board is physically connected. If CTS does not follow DTR, the status icon shows "interface not found" even if the port is open.
 
@@ -376,7 +376,7 @@ CmdUgasi=Stop Bell
 1. Copy `language\English_language.lng` → `language\MyLanguage_language.lng`
 2. Translate all values (right side of `=`). Never modify keys (left side).
 3. Save as **Windows-1250 encoding** with **CRLF line endings**.
-4. Launch BellPro — the language appears automatically in the dropdown.
+4. Launch BellPro - the language appears automatically in the dropdown.
 
 > For scripts that cannot be encoded in Windows-1250 (Arabic, Hebrew, Chinese, Japanese, Korean, Thai...) use Latin transliteration. The VB6 runtime reads files as raw bytes and does not perform Unicode conversion.
 
@@ -436,7 +436,7 @@ dayStr = GetDayName(Weekday(Date) - 1)
 
 1. Add the key-value pair to **all** language files in `language\` under the appropriate `[Section]`.
 2. In code, reference it with `T("SectionName", "KeyName")`.
-3. `T()` returns the key name itself as a fallback if the key is missing — so missing translations are visible during testing.
+3. `T()` returns the key name itself as a fallback if the key is missing - so missing translations are visible during testing.
 
 ### config.ini Key Reference
 
@@ -450,7 +450,7 @@ All runtime settings are stored in `config.ini` in the application directory.
 | `025` | `12` | Bell duration in seconds |
 | `026` | `1` | Start with Windows (1=yes, 0=no) |
 | `027` | `1` | Notify on bell ring (1=yes, 0=no) |
-| `028` | `0` | Master mute — do not ring (1=yes, 0=no) |
+| `028` | `0` | Master mute - do not ring (1=yes, 0=no) |
 | `029` | `1` | Start minimized (1=yes, 0=no) |
 | `030` | `1` | Do not ring on Saturdays (1=yes, 0=no) |
 | `031` | `1` | Do not ring on Sundays (1=yes, 0=no) |
@@ -462,8 +462,8 @@ All runtime settings are stored in `config.ini` in the application directory.
 | `040` | `1` | DTR/CTS interface detection enabled (1=yes, 0=no) |
 | `041` | `0` | Invert RTS relay output (1=yes, 0=no) |
 | `050` | `Serbian` | UI language (matches `<name>_language.lng`) |
-| `013`–`020` | — | Break date ranges (pairs: start/end for 4 breaks) |
-| `001`–`012` | — | Public holiday dates (up to 12, in `dd.MM.yyyy` format) |
+| `013`–`020` | - | Break date ranges (pairs: start/end for 4 breaks) |
+| `001`–`012` | - | Public holiday dates (up to 12, in `dd.MM.yyyy` format) |
 
 ---
 
@@ -476,7 +476,7 @@ All runtime settings are stored in `config.ini` in the application directory.
 | *Do not ring* is enabled in Settings | Uncheck the master mute option |
 | Today is a weekend / holiday / break | Check calendar suppression settings |
 | No active schedule selected | Open main window, select schedule, click **Apply** |
-| Time in schedule is wrong format | Must be `HH:MM` — confirm with schedule editor |
+| Time in schedule is wrong format | Must be `HH:MM` - confirm with schedule editor |
 | Database not found | Reinstall SQLite ODBC driver, verify `base.sqlite` is present |
 
 ### "Component not found" on startup
@@ -504,7 +504,7 @@ Switch to a native COM port or replace the adapter with an **FTDI FT232RNL**-bas
 ### Language file not appearing in dropdown
 
 - Confirm the file is named exactly `LanguageName_language.lng` (underscore before *language*).
-- Confirm it is saved in **Windows-1250 encoding** with **CRLF line endings** — not UTF-8, not LF-only.
+- Confirm it is saved in **Windows-1250 encoding** with **CRLF line endings** - not UTF-8, not LF-only.
 - Confirm the file is in the `language\` subfolder next to `BellPro.exe`.
 
 ### Language displays garbled characters
@@ -522,7 +522,7 @@ Yes. BellPro is a 32-bit VB6 application and runs under WOW64 on all 64-bit Wind
 Not in a single instance. BellPro activates one schedule at a time. For parallel schedules (e.g. different wings of a building on different timetables) run separate instances of BellPro with separate databases and separate COM ports.
 
 **Q: What happens if the PC restarts during the school day?**  
-With *Start with Windows* enabled, BellPro launches automatically after Windows loads. Any bells that occurred while the PC was down are not replayed — the system resumes normal operation from the next scheduled entry.
+With *Start with Windows* enabled, BellPro launches automatically after Windows loads. Any bells that occurred while the PC was down are not replayed - the system resumes normal operation from the next scheduled entry.
 
 **Q: Can I use BellPro without the RS232 relay hardware?**  
 Yes. Set the interface type to *No interface* in Program → Interface. BellPro will still fire the schedule on time and can play MP3 audio through the PC's sound card. This is useful for testing or for PA systems with a line-in trigger.
@@ -531,7 +531,7 @@ Yes. Set the interface type to *No interface* in Program → Interface. BellPro 
 The license key is generated from the **volume serial number** of the system drive (C:). If you replace the hard drive or reformat, you will need a new license key. Use the included KeyGenerator utility.
 
 **Q: How do I back up my schedules?**  
-Use Schedule → Export to save each schedule as an XML file. Alternatively, copy `base.sqlite` directly — it contains all schedules and bell entries.
+Use Schedule → Export to save each schedule as an XML file. Alternatively, copy `base.sqlite` directly - it contains all schedules and bell entries.
 
 **Q: Can I add more than 12 public holidays?**  
 Not in the current version. The holiday system supports up to 12 specific dates. For recurring annual holidays, re-enter them each school year. The Roadmap includes plans for recurring holiday rules.
@@ -543,18 +543,18 @@ Copy any existing `.lng` file from the `language\` folder, rename it `LanguageNa
 
 ## Roadmap
 
-- **Standalone embedded version** — Port scheduling logic to an ESP32 or AVR microcontroller for operation without a PC. *(See [BellPro Embedded](https://github.com/tecomatic/bellpro-embedded))*
-- **Additional languages** — Contribute new `.lng` translation files.
-- **Installer** — NSIS or Inno Setup installer to automate ODBC driver installation and OCX registration.
-- **Ring event log** — Timestamped log file of all bell events for audit and troubleshooting.
-- **Network time sync** — NTP-based time correction to compensate for PC clock drift.
-- **Schedule templates** — Predefined schedule templates for common Serbian school timetable formats.
+- **Standalone embedded version** - Port scheduling logic to an ESP32 or AVR microcontroller for operation without a PC. *(See [BellPro Embedded](https://github.com/tecomatic/bellpro-embedded))*
+- **Additional languages** - Contribute new `.lng` translation files.
+- **Installer** - NSIS or Inno Setup installer to automate ODBC driver installation and OCX registration.
+- **Ring event log** - Timestamped log file of all bell events for audit and troubleshooting.
+- **Network time sync** - NTP-based time correction to compensate for PC clock drift.
+- **Schedule templates** - Predefined schedule templates for common Serbian school timetable formats.
 
 ---
 
 ## Contributing
 
-If you deploy BellPro in a school or organization, please open an issue to document it — it helps track the project's reach and impact.
+If you deploy BellPro in a school or organization, please open an issue to document it - it helps track the project's reach and impact.
 
 Contributions of all kinds are welcome: code improvements, new language files, hardware design variants, bug reports, or documentation updates.
 
@@ -579,9 +579,9 @@ git push origin feature/my-improvement
 
 ## License
 
-BellPro is released under the [MIT License](LICENSE) — free to use, modify, and redistribute, provided the original copyright notice is retained in all copies or substantial portions of the software.
+BellPro is released under the [MIT License](LICENSE) - free to use, modify, and redistribute, provided the original copyright notice is retained in all copies or substantial portions of the software.
 
 ---
 
-*Developed and maintained by [Tecomatic](https://tecomatic.rs) — Novi Sad, Serbia.*  
+*Developed and maintained by [Tecomatic](https://tecomatic.rs) - Novi Sad, Serbia.*  
 *Inspired by the school bell automation work of Voja Milanović: http://vojo.milanovic.org/zvono.htm*
