@@ -47,11 +47,11 @@ BellPro is a robust, open-source software solution designed to automate school b
 
 ## Screenshots
 
-> *(Add screenshots to a `docs/screenshots/` folder and update these paths.)*
+> *(Add screenshots to a `Docs/screenshots/` folder and update these paths.)*
 
 | Main Window | Schedule Editor | Settings |
 |---|---|---|
-| ![Main](docs/screenshots/main.png) | ![Schedule](docs/screenshots/schedule.png) | ![Settings](docs/screenshots/settings.png) |
+| ![Main](Docs/screenshots/main.png) | ![Schedule](Docs/screenshots/schedule.png) | ![Settings](Docs/screenshots/settings.png) |
 
 ---
 
