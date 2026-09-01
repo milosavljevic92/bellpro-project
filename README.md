@@ -4,6 +4,10 @@
 [![Platform: Windows](https://img.shields.io/badge/Platform-Windows-lightgrey.svg)]()
 [![Language: VB6](https://img.shields.io/badge/Language-VB6-orange.svg)]()
 [![Languages: 13](https://img.shields.io/badge/UI_Languages-13-green.svg)]()
+[![Downloads](https://img.shields.io/github/downloads/milosavljevic92/bellpro-project/total.svg)](https://github.com/milosavljevic92/bellpro-project/releases)
+[![Stars](https://img.shields.io/github/stars/milosavljevic92/bellpro-project.svg)](https://github.com/milosavljevic92/bellpro-project/stargazers)
+[![Forks](https://img.shields.io/github/forks/milosavljevic92/bellpro-project.svg)](https://github.com/milosavljevic92/bellpro-project/network/members)
+[![Last Commit](https://img.shields.io/github/last-commit/milosavljevic92/bellpro-project.svg)](https://github.com/milosavljevic92/bellpro-project/commits/main)
 
 BellPro is a robust, open-source software solution designed to automate school bell ringing. By interfacing a PC with an existing school PA system via a custom RS232 hardware interface, BellPro eliminates manual operation and ensures high-precision timing for classes, breaks, and extracurricular activities.
 
